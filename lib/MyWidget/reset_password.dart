@@ -13,6 +13,7 @@ class _ResetPasswordState extends State<ResetPassword> {
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.symmetric(vertical: 24, horizontal: 32),
+        child: SingleChildScrollView(
         child: Column(
           children: [
             Align(
@@ -98,7 +99,7 @@ class _ResetPasswordState extends State<ResetPassword> {
             SizedBox(height: 22),
           ],
         ),
-      ),
+      ),),
     );
   }
 }
