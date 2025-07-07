@@ -49,7 +49,7 @@ class _ModuleState extends State<Module> {
   Widget build(BuildContext context) {
     ajouter_module('Comment creer un site web avec Html et C ss', 'Developpement Web', 'html.png', '27 Page', '72h', 'Vide');
     ajouter_module('Bureautique', 'Informatique', 'bureautique.png','57 Page', '50h', 'Vide');
-    ajouter_module('Flutter et Dart', 'Developpement mobile', 'flutter.png','29 Page', '32h', 'Vide');
+    ajouter_module('Fttdtdlutter et Dart', 'Developpement mobile', 'flutter.png','29 Page', '32h', 'Vide');
     ajouter_module('Journalisme', 'Communication', 'journalisme.png','21 Page', '12h', 'Vide');
     ajouter_module('Dessin et Numerique', 'Arts', 'dessin.png','237 Page', '60h', 'Vide');
     return Center(
@@ -95,4 +95,3 @@ class _ModuleState extends State<Module> {
   }
 }
 */
-
