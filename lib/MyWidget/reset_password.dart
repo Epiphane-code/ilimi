@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'new_password.dart';
 
 class ResetPassword extends StatefulWidget {
   const ResetPassword({super.key});
@@ -71,7 +72,13 @@ class _ResetPasswordState extends State<ResetPassword> {
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        runApp(
+                          MaterialApp(
+                            home: NewPassword(),
+                          )
+                        );
+                      },
                       style: ButtonStyle(
                         foregroundColor: MaterialStateProperty.all(
                           Color(0xFFFFC727),
