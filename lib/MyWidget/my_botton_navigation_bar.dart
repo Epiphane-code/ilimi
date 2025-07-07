@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'profile.dart';
 import 'home_body.dart';
 // La barre de navigation
 
@@ -25,12 +26,9 @@ class _MyBottonNavigationBarState extends State<MyBottonNavigationBar> {
 
     _body = <Widget>[
       Home2screen(),
-      //Center(
-      //child: Text("Page1"),
-      //),
       Center(child: Text("Page2")),
       Center(child: Text("Page3")),
-      Center(child: Text("Page4")),
+      Profile(),
     ];
 
     _myIcon = <BottomNavigationBarItem>[
