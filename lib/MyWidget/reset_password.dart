@@ -11,7 +11,7 @@ class _ResetPasswordState extends State<ResetPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:  Padding(
+      body: Padding(
         padding: EdgeInsets.symmetric(vertical: 24, horizontal: 32),
         child: Column(
           children: [
@@ -32,7 +32,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                 // height: 20,
               ),
             ),
-      
+
             const SizedBox(height: 90),
             SizedBox(height: 50),
             Container(
@@ -52,7 +52,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                     ),
                     child: TextFormField(
                       keyboardType: TextInputType.emailAddress,
-      
+
                       // style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)
                       decoration: InputDecoration(
                         hintText: "Adresse Mail",
@@ -64,9 +64,9 @@ class _ResetPasswordState extends State<ResetPassword> {
                       ),
                     ),
                   ),
-      
+
                   SizedBox(height: 50),
-      
+
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
@@ -94,7 +94,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                 ],
               ),
             ),
-      
+
             SizedBox(height: 22),
           ],
         ),

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'my_home_page.dart';
-import 'MyWidget/my_botton_navigation_bar.dart';
+import 'package:ilimi/MyWidget/welcome.dart';
 
 void main() {
   runApp(const MyApp());
-
 }
 
 class MyApp extends StatelessWidget {
@@ -17,11 +15,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
       ),
-      home: MyBottonNavigationBar(),
+      home: Welcome(),
     );
   }
 }
-
