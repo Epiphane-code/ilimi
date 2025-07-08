@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ilimi/MyWidget/welcome.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -99,7 +100,14 @@ class _ProfileState extends State<Profile> {
               ListTile(
                 leading: Icon(Icons.logout),
                 title: Text("Déconnexion", style: TextStyle(color: Colors.red)),
-                onTap: () {},
+                onTap: () {
+                  Future.delayed(Duration.zero, () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Welcome()),
+                    );
+                  });
+                },
               ),
             ],
           ),
