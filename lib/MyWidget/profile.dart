@@ -14,21 +14,6 @@ class _ProfileState extends State<Profile> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          SizedBox(height: 20),
-          Center(
-            child: Text(
-              "Profile",
-              style: TextStyle(
-                fontSize: 18,
-                color: Color(0xFF202244),
-                fontFamily: 'Jost',
-                fontWeight: FontWeight.w600,
-                height: 1.0,
-                letterSpacing: 0.0,
-              ),
-            ),
-          ),
-
           SizedBox(height: 40),
           CircleAvatar(
             radius: 50,
@@ -59,7 +44,7 @@ class _ProfileState extends State<Profile> {
               letterSpacing: 0.0,
             ),
           ),
-          SizedBox(height: 40),
+          SizedBox(height: 20),
           Column(
             children: [
               ListTile(

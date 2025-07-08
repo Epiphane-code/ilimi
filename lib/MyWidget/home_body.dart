@@ -39,9 +39,10 @@ class _Home2screenState extends State<Home2screen> {
 
   @override
   void initState() {
+    super.initState();
     modules.add(
       Module(
-        nom_module: 'Comment creer un site web avec Html et C ss',
+        nom_module: 'Creer un site web avec Html et Css',
         categorie_module: 'Developpement Web',
         image_module: 'html.png',
         taille_module: '27 Page',
@@ -167,18 +168,18 @@ class _Home2screenState extends State<Home2screen> {
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(18),
-                        boxShadow: [
+                        /*boxShadow: [
                           BoxShadow(
                             color: Colors.black,
                             spreadRadius: 1,
                             blurRadius: 6,
                             offset: Offset(0, 0),
                           ),
-                        ],
+                        ],*/
                       ),
                       child: TextFormField(
                         decoration: InputDecoration(
-                          hintText: 'chercher un thème',
+                          hintText: 'Chercher un thème',
                           prefixIcon: Icon(Icons.search),
                           filled: true,
                           fillColor: Colors.white,
@@ -207,7 +208,7 @@ class _Home2screenState extends State<Home2screen> {
             style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
           ),
         ),*/
-        SizedBox(height: 20),
+        SizedBox(height: 10),
         SizedBox(
           height: 37,
           child: ListView.builder(
@@ -282,7 +283,7 @@ class _Home2screenState extends State<Home2screen> {
                             borderRadius: BorderRadius.circular(20),
                             child: Image.asset(
                               'assets/images/${modules[index].image_module}',
-                              height: 230,
+                              height: 200,
                               width: double.infinity,
                               fit: BoxFit.cover,
                             ),
@@ -300,7 +301,7 @@ class _Home2screenState extends State<Home2screen> {
                             ),
                           ),
 
-                          SizedBox(height: 2),
+                          SizedBox(height: 0),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
