@@ -73,11 +73,21 @@ class _ResetPasswordState extends State<ResetPassword> {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => NewPassword()),);
                         runApp(
                           MaterialApp(
+                            debugShowCheckedModeBanner: false,
                             home: NewPassword(),
+                         )
+                      );
+                       /* runApp(
+                          MaterialApp(
+                            debugShowCheckedModeBanner: false,
+                            home: Center(
+                              child: Text("Bonjour"),
+                            ),
                           )
-                        );
+                        );*/
                       },
                       style: ButtonStyle(
                         foregroundColor: MaterialStateProperty.all(
