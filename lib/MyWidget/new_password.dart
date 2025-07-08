@@ -27,7 +27,7 @@ class _NewPasswordState extends State<NewPassword> {
             ),
             const SizedBox(height: 150),
             Text(
-              "Reset Password",
+              "Create New Password",
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -53,11 +53,12 @@ class _NewPasswordState extends State<NewPassword> {
                       border: Border.all(color: Colors.amber, width: 1),
                     ),
                     child: TextFormField(
-                      keyboardType: TextInputType.emailAddress,
+                      keyboardType: TextInputType.visiblePassword,
+                      obscureText: true,
 
                       // style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)
                       decoration: InputDecoration(
-                        hintText: "Adresse Mail",
+                        hintText: "Nouveau mot de passe",
                         border: InputBorder.none,
                         contentPadding: EdgeInsets.symmetric(
                           horizontal: 16,
@@ -66,8 +67,32 @@ class _NewPasswordState extends State<NewPassword> {
                       ),
                     ),
                   ),
-
+                    
                   SizedBox(height: 50),
+
+                  Container(
+                    height: 45,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(22)),
+                      border: Border.all(color: Colors.amber, width: 1),
+                    ),
+                    child: TextFormField(
+                      keyboardType: TextInputType.visiblePassword,
+                      obscureText: true,
+
+                      // style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)
+                      decoration: InputDecoration(
+                        hintText: "Confirmer",
+                        border: InputBorder.none,
+                        contentPadding: EdgeInsets.symmetric(
+                          horizontal: 16,
+                          vertical: 12,
+                        ),
+                      ),
+                    ),
+                  ),  
+
+                    SizedBox(height: 50),
 
                   SizedBox(
                     width: double.infinity,

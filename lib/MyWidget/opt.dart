@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'new_password.dart';
 
 class Opt extends StatefulWidget {
   const Opt({super.key});
@@ -81,7 +82,7 @@ class _OptState extends State<Opt> {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {
-                        //Navigator.push(context, MaterialPageRoute(builder: (context) => NewPassword()),);
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => NewPassword()),);
                        // runApp(
                         //  MaterialApp(
                          //   home: NewPassword(),
