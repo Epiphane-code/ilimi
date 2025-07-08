@@ -26,7 +26,7 @@ class _OptState extends State<Opt> {
             ),
             const SizedBox(height: 150),
             Text(
-              "Reset Password",
+              "OPT Vérification",
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -45,26 +45,35 @@ class _OptState extends State<Opt> {
               ),
               child: Column(
                 children: [
-                  Container(
-                    height: 45,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(22)),
-                      border: Border.all(color: Colors.amber, width: 1),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                     _textFieldOPT(first: true, last: false),
+                     _textFieldOPT(first: true, last: false),
+                     _textFieldOPT(first: true, last: false),
+                     _textFieldOPT(first: true, last: true),
+                     ],
                     ),
-                    child: TextFormField(
-                      keyboardType: TextInputType.emailAddress,
+                 // Container(
+                   // height: 45,
+                  //  decoration: BoxDecoration(
+                    //  borderRadius: BorderRadius.all(Radius.circular(22)),
+                    //  border: Border.all(color: Colors.amber, width: 1),
+                   // ),
+                   // child: TextFormField(
+                    //  keyboardType: TextInputType.emailAddress,
 
                       // style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)
-                      decoration: InputDecoration(
-                        hintText: "Adresse Mail",
-                        border: InputBorder.none,
-                        contentPadding: EdgeInsets.symmetric(
-                          horizontal: 16,
-                          vertical: 12,
-                        ),
-                      ),
-                    ),
-                  ),
+                    //  decoration: InputDecoration(
+                     //   hintText: "Adresse Mail",
+                      //  border: InputBorder.none,
+                      //  contentPadding: EdgeInsets.symmetric(
+                       //   horizontal: 16,
+                      //    vertical: 12,
+                      //  ),
+                    //  ),
+                   // ),
+                //  ),
 
                   SizedBox(height: 50),
 
@@ -90,7 +99,7 @@ class _OptState extends State<Opt> {
                       child: Padding(
                         padding: EdgeInsets.all(5),
                         child: Text(
-                          'Envoyer code',
+                          'Verify',
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -107,6 +116,43 @@ class _OptState extends State<Opt> {
           ],
         ),
       ),),
+    );
+
+  }
+  _textFieldOPT({bool first = true, last}){
+    return Container(
+      height: 85,
+      child: AspectRatio(
+        aspectRatio: 0.7,
+        child: TextField(
+          autofocus: true,
+          onChanged: (value) {
+            if(value.length == 1 && last == false){
+              FocusScope.of(context).previousFocus();
+            }
+            if(value.length == 1 && first == false){
+              FocusScope.of(context).previousFocus();
+            }
+          },
+          showCursor: false,
+          readOnly: false,
+          textAlign: TextAlign.center,
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+          keyboardType: TextInputType.number,
+          maxLength: 1,
+          decoration: InputDecoration(
+            counter: Offstage(),
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(width: 2, color: Colors.black12),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(width: 2, color: Colors.orange),
+              borderRadius: BorderRadius.circular(12),
+            )
+          ),
+        ), 
+      )
     );
   }
 }//Text("Opt");

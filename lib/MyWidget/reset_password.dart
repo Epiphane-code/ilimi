@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ilimi/MyWidget/opt.dart';
 import 'new_password.dart';
 
 class ResetPassword extends StatefulWidget {
@@ -73,7 +74,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => NewPassword()),);
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => Opt()),);
                         runApp(
                           MaterialApp(
                             debugShowCheckedModeBanner: false,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+//import 'new_password.dart';
 
 class NewPassword extends StatefulWidget {
   const NewPassword({super.key});
@@ -26,7 +27,7 @@ class _NewPasswordState extends State<NewPassword> {
             ),
             const SizedBox(height: 150),
             Text(
-              "Create New Password",
+              "Reset Password",
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -71,7 +72,23 @@ class _NewPasswordState extends State<NewPassword> {
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => NewPassword()),);
+                        runApp(
+                          MaterialApp(
+                            debugShowCheckedModeBanner: false,
+                            home: NewPassword(),
+                         )
+                      );
+                       /* runApp(
+                          MaterialApp(
+                            debugShowCheckedModeBanner: false,
+                            home: Center(
+                              child: Text("Bonjour"),
+                            ),
+                          )
+                        );*/
+                      },
                       style: ButtonStyle(
                         foregroundColor: MaterialStateProperty.all(
                           Color(0xFFFFC727),
@@ -83,7 +100,7 @@ class _NewPasswordState extends State<NewPassword> {
                       child: Padding(
                         padding: EdgeInsets.all(5),
                         child: Text(
-                          'Send code',
+                          'Envoyer code',
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -102,4 +119,4 @@ class _NewPasswordState extends State<NewPassword> {
       ),),
     );
   }
-}//Text("NewPassword");
+}
