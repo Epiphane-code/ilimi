@@ -125,7 +125,7 @@ class _NewPasswordState extends State<NewPassword> {
                       child: Padding(
                         padding: EdgeInsets.all(5),
                         child: Text(
-                          'Envoyer code',
+                          'Reset password',
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
