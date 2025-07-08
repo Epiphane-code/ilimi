@@ -46,20 +46,20 @@ class _LoginFormulerState extends State<LoginFormuler> {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(12),
                 boxShadow: [
-                  BoxShadow(
+                  /*BoxShadow(
                     color: Colors.black.withValues(
                       alpha: 0.3,
                     ), // couleur de l’ombre
                     spreadRadius: 1,
                     blurRadius: 6,
                     offset: Offset(0, 4), // position de l’ombre (x, y)
-                  ),
+                  ),*/
                 ],
               ),
               child: TextFormField(
                 decoration: InputDecoration(
                   hintText: 'Entrez votre adresse mail',
-                  filled: true,
+                  filled: false,
                   fillColor: Colors.white,
                   contentPadding: const EdgeInsets.symmetric(
                     horizontal: 16,
@@ -89,20 +89,20 @@ class _LoginFormulerState extends State<LoginFormuler> {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(12),
                 boxShadow: [
-                  BoxShadow(
+                  /*BoxShadow(
                     color: Colors.black.withValues(
                       alpha: 0.3,
                     ), // couleur de l’ombre
                     spreadRadius: 1,
                     blurRadius: 6,
                     offset: Offset(0, 4), // position de l’ombre (x, y)
-                  ),
+                  ),*/
                 ],
               ),
               child: TextFormField(
                 decoration: InputDecoration(
                   hintText: 'Entrez votre mot de passe',
-                  filled: true,
+                  filled: false,
                   fillColor: Colors.white,
                   contentPadding: const EdgeInsets.symmetric(
                     horizontal: 16,
