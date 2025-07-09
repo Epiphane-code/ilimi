@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ilimi/MyWidget/cours_body.dart';
 import 'profile.dart';
 import 'home_body.dart';
 // La barre de navigation
@@ -17,7 +18,11 @@ class _MyBottonNavigationBarState extends State<MyBottonNavigationBar> {
   List<Widget> _body = [];
   final List<String> _myText = ['Accueil', 'Mes cours', 'Chat', 'Profile'];
   late String mytexte;
+  late Color apBarColorBlue;
+  late List<Color> _myColor;
+  late Color myTextColor;
 
+  late List<Color> _myTextColor;
   /*List<String> Module = []; //['id_module', 'nom_mdule', 'categorie_module','image_module', 'duree_module','note_module' ];
   List<Module> modules = [];
   */
@@ -27,11 +32,26 @@ class _MyBottonNavigationBarState extends State<MyBottonNavigationBar> {
     super.initState(); // ou _myIcon = [];
 
     mytexte = _myText[0];
+    apBarColorBlue = Color(0xFF0EA5E9);
+    myTextColor = Color(0xFFFFFFFF);
+    _myColor = <Color>[
+      Color(0xFF0EA5E9),
+      Color.fromRGBO(251, 249, 249, 0.945),
+      Color.fromRGBO(251, 249, 249, 0.945),
+      Color.fromRGBO(251, 249, 249, 0.945),
+    ];
+
+    _myTextColor = <Color>[
+      Color.fromRGBO(251, 249, 249, 0.945),
+      Color(0xFF000000),
+      Color(0xFF000000),
+      Color(0xFF000000),
+    ];
 
     _body = <Widget>[
       Home2screen(),
+      CoursBody(),
       Center(child: Text("Page2")),
-      Center(child: Text("Page3")),
       Profile(),
     ];
 
@@ -56,12 +76,12 @@ class _MyBottonNavigationBarState extends State<MyBottonNavigationBar> {
           mytexte,
           style: TextStyle(
             fontSize: 20,
-            color: Color.fromRGBO(251, 249, 249, 0.945),
+            color: myTextColor,
             fontFamily: 'Jost',
             fontWeight: FontWeight.w600,
           ),
         ),
-        backgroundColor: Color(0xFF0EA5E9),
+        backgroundColor: apBarColorBlue,
       ),
       body: select,
       bottomNavigationBar: BottomNavigationBar(
@@ -73,6 +93,8 @@ class _MyBottonNavigationBarState extends State<MyBottonNavigationBar> {
             _id = myIcon;
             select = _body[_id];
             mytexte = _myText[_id];
+            apBarColorBlue = _myColor[_id];
+            myTextColor = _myTextColor[_id];
           });
         },
         selectedItemColor: Color(0xFFFFC727),
