@@ -1,22 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Module {
-  String nom_module;
-  String categorie_module;
-  String image_module;
-  String taille_module;
-  String duree_module;
-  String note_module;
-
-  Module({
-    required this.nom_module,
-    required this.categorie_module,
-    required this.image_module,
-    required this.taille_module,
-    required this.duree_module,
-    required this.note_module,
-  });
-}
+import 'class.dart';
 
 class Home2screen extends StatefulWidget {
   const Home2screen({super.key});
@@ -40,6 +24,7 @@ class _Home2screenState extends State<Home2screen> {
   @override
   void initState() {
     super.initState();
+
     modules.add(
       Module(
         nom_module: 'Creer un site web avec Html et Css',
@@ -88,7 +73,7 @@ class _Home2screenState extends State<Home2screen> {
       children: [
         Container(
           width: double.infinity,
-          height: 150,
+          height: 120,
           color: Color(0xFF0EA5E9),
           child: Stack(
             children: [
@@ -108,7 +93,7 @@ class _Home2screenState extends State<Home2screen> {
                 child: Icon(Icons.star, color: Colors.yellow, size: 14),
               ),
               Positioned(
-                top: 80,
+                top: 50,
                 right: 20,
                 child: Icon(Icons.star, color: Colors.yellow[200], size: 20),
               ),
@@ -145,22 +130,11 @@ class _Home2screenState extends State<Home2screen> {
                               ),
                             ],
                           ),
-                          Container(
-                            padding: EdgeInsets.all(8),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              shape: BoxShape.circle,
-                            ),
-                            child: Icon(
-                              Icons.notifications,
-                              color: Color(0xFF5B271E),
-                              size: 30,
-                            ),
-                          ),
+                          Text(""),
                         ],
                       ),
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: 0),
                     Container(
                       height: 40,
                       margin: EdgeInsets.symmetric(horizontal: 50),
