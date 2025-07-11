@@ -254,12 +254,13 @@ class _Home2screenState extends State<Home2screen> {
 
                         children: [
                           ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(20),                      
                             child: Image.asset(
                               'assets/images/${modules[index].image_module}',
                               height: 200,
                               width: double.infinity,
                               fit: BoxFit.cover,
+                            
                             ),
                           ),
                           Text(

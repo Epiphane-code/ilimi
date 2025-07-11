@@ -21,6 +21,7 @@ class Welcome extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
 
                 children: [
+                  const SizedBox(height: 40),
                   // Logo
                   Image.asset('assets/images/ilimi_logo.png'),
                   const SizedBox(height: 40),
@@ -39,17 +40,15 @@ class Welcome extends StatelessWidget {
                   const SizedBox(height: 40),
 
                   // Bouton Connexion
-                  OutlinedButton(
+                  ElevatedButton(
                     onPressed: () {
-                      runApp(
-                        MaterialApp(
-                          debugShowCheckedModeBanner: false,
-
-                          home: Login(),
-                        ),
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Login()),
                       );
                     },
-                    style: OutlinedButton.styleFrom(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFF5A231F), // marron foncé
                       padding: const EdgeInsets.symmetric(
                         vertical: 16,
                         horizontal: 40,
@@ -57,12 +56,12 @@ class Welcome extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
-                      side: const BorderSide(color: Colors.lightBlue, width: 2),
+                      elevation: 6,
                     ),
                     child: const Text(
                       'Connexion',
                       style: TextStyle(
-                        color: Colors.lightBlue,
+                        color: Color(0xFFFFC72C), // jaune doré
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
@@ -81,7 +80,10 @@ class Welcome extends StatelessWidget {
                   // Bouton Inscription
                   ElevatedButton(
                     onPressed: () {
-                      runApp(MaterialApp(home: Register()));
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Register()),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF5A231F), // marron foncé

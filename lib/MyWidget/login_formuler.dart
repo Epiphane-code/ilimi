@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ilimi/MyWidget/my_botton_navigation_bar.dart';
 import 'package:ilimi/MyWidget/reset_password.dart';
+import 'class.dart';
 
 class LoginFormuler extends StatefulWidget {
   const LoginFormuler({super.key});

@@ -46,7 +46,7 @@ class MesModules extends Module {
 }
 
 class Users {
-  final String id;
+  final int id;
   final String name;
   final String email;
   final String imageUrl;
@@ -74,5 +74,17 @@ class ForumPost {
     required this.nb_comment,
     required this.sujet,
     required this.post,
+  });
+}
+
+class Community {
+  final String name;
+  final String description;
+  final String imageUrl;
+
+  Community({
+    required this.name,
+    required this.description,
+    required this.imageUrl,
   });
 }

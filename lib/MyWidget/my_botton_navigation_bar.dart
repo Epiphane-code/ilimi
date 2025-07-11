@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ilimi/MyWidget/cours_body.dart';
+import 'package:ilimi/MyWidget/forum_post.dart';
 import 'profile.dart';
 import 'home_body.dart';
-import 'class.dart';
 // La barre de navigation
 
 class MyBottonNavigationBar extends StatefulWidget {
@@ -17,7 +17,7 @@ class _MyBottonNavigationBarState extends State<MyBottonNavigationBar> {
   int _id = 0;
   List<BottomNavigationBarItem> _myIcon = [];
   List<Widget> _body = [];
-  final List<String> _myText = ['Accueil', 'Mes cours', 'Chat', 'Profile'];
+  final List<String> _myText = ['Accueil', 'Mes cours', 'Forum', 'Profile'];
   late String mytexte;
   late Color apBarColorBlue;
   late List<Color> _myColor;
@@ -65,12 +65,7 @@ class _MyBottonNavigationBarState extends State<MyBottonNavigationBar> {
       Color(0xFF000000),
     ];
 
-    _body = <Widget>[
-      Home2screen(),
-      CoursBody(),
-      Center(child: Text("Page2")),
-      Profile(),
-    ];
+    _body = <Widget>[Home2screen(), CoursBody(), PostForum(), Profile()];
 
     _myIcon = <BottomNavigationBarItem>[
       BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Accueil'),

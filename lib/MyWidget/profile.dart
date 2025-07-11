@@ -16,8 +16,12 @@ class _ProfileState extends State<Profile> {
         children: [
           SizedBox(height: 40),
           CircleAvatar(
-            radius: 50,
-            backgroundImage: AssetImage('assets/images/ilimi_logo.png'),
+            backgroundColor: Colors.yellow,
+            radius: 52,
+            child: CircleAvatar(
+              radius: 50,
+              backgroundImage: AssetImage('assets/images/ilimi_logo.png'),
+            ),
           ),
           SizedBox(height: 20),
           Text(
