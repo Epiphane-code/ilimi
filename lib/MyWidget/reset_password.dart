@@ -20,10 +20,15 @@ class _ResetPasswordState extends State<ResetPassword> {
           children: [
             Align(
               alignment: Alignment.topLeft,
-              child: Icon(
-                Icons.arrow_back_ios_new,
+              child: IconButton (
+                icon: Icon(
+                Icons.arrow_back_ios_new, 
                 color: Colors.black54,
                 size: 32,
+                ),
+                onPressed: (){
+                  Navigator.pop(context);
+                },
               ),
             ),
             const SizedBox(height: 150),
