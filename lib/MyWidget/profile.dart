@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ilimi/MyWidget/edit_profile.dart';
 import 'package:ilimi/MyWidget/welcome.dart';
 
 class Profile extends StatefulWidget {
@@ -16,8 +17,13 @@ class _ProfileState extends State<Profile> {
         children: [
           SizedBox(height: 40),
           CircleAvatar(
+<<<<<<< HEAD
             backgroundColor: Colors.yellow,
             radius: 52,
+=======
+            backgroundColor: Color.fromARGB(255, 22, 127, 113),
+            radius: 54,
+>>>>>>> 691ad0d (Abbas)
             child: CircleAvatar(
               radius: 50,
               backgroundImage: AssetImage('assets/images/ilimi_logo.png'),
@@ -53,7 +59,11 @@ class _ProfileState extends State<Profile> {
             children: [
               ListTile(
                 leading: Icon(Icons.person),
-                title: Text("Modifier le profil"),
+                title: Text("Modifier le profil",),
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => EditProfile()),
+                ),
                 trailing: Icon(Icons.chevron_right),
               ),
 

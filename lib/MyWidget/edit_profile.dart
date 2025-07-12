@@ -30,10 +30,15 @@ class _EditProfileState extends State<EditProfile> {
               // Setting the back button
               Align(
                 alignment: Alignment.centerLeft,
-                child: Icon(
-                  Icons.arrow_back_ios,
-                  size: 30,
-                  ),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Icon(
+                    Icons.arrow_back_ios,
+                    size: 30,
+                    ),
+                ),
               ),
               SizedBox(height: 10), // Adding space between the back button and the Profile Picture
 
