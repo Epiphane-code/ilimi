@@ -17,13 +17,8 @@ class _ProfileState extends State<Profile> {
         children: [
           SizedBox(height: 40),
           CircleAvatar(
-<<<<<<< HEAD
-            backgroundColor: Colors.yellow,
-            radius: 52,
-=======
             backgroundColor: Color.fromARGB(255, 22, 127, 113),
             radius: 54,
->>>>>>> 691ad0d (Abbas)
             child: CircleAvatar(
               radius: 50,
               backgroundImage: AssetImage('assets/images/ilimi_logo.png'),

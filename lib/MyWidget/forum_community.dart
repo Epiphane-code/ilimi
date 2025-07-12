@@ -40,9 +40,7 @@ class _ForumCommunityState extends State<ForumCommunity> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Forum Community")),
-      body: ListView.builder(
+    return ListView.builder(
         itemCount: communitie.length,
         itemBuilder: (context, index) {
           return ListTile(
@@ -55,7 +53,6 @@ class _ForumCommunityState extends State<ForumCommunity> {
             subtitle: Text(communitie[index].description),
           );
         },
-      ),
-    );
+      );
   }
 }

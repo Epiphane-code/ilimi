@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ilimi/MyWidget/cours_body.dart';
+import 'package:ilimi/MyWidget/forum.dart';
 import 'package:ilimi/MyWidget/forum_post.dart';
 import 'profile.dart';
 import 'home_body.dart';
@@ -65,7 +66,7 @@ class _MyBottonNavigationBarState extends State<MyBottonNavigationBar> {
       Color(0xFF000000),
     ];
 
-    _body = <Widget>[Home2screen(), CoursBody(), PostForum(), Profile()];
+    _body = <Widget>[Home2screen(), CoursBody(), Forum(), Profile()];
 
     _myIcon = <BottomNavigationBarItem>[
       BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Accueil'),

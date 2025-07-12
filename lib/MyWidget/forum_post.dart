@@ -158,62 +158,60 @@ class _PostForumState extends State<PostForum> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          SizedBox(height: 10),
-          ListView.builder(
-            shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            itemCount: forumPosts.length,
-            itemBuilder: (context, index) {
-              final post = forumPosts[index];
-              final user = users.firstWhere((u) => u.id == post.idUser);
-              return Container(
-                
-                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      user.name,
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    post.sujet,
-                    post.post,
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        IconButton(
-                          icon: Icon(Icons.thumb_up),
-                          onPressed: () {
-                            setState(() {});
-                          },
-                        ),
-                        Text('0'),
-                        SizedBox(width: 10),
-                        IconButton(
-                          icon: Icon(Icons.comment),
-                          onPressed: () {
-                            // Action pour commenter
-                          },
-                        ),
-                        Text('0'),
-                      ],
-                    ),
-                  ],
-                ),
-              );
-            },
-          ),
-        ],
-      ),
+    return Column(
+      children: [
+        SizedBox(height: 10),
+        ListView.builder(
+          shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
+          itemCount: forumPosts.length,
+          itemBuilder: (context, index) {
+            final post = forumPosts[index];
+            final user = users.firstWhere((u) => u.id == post.idUser);
+            return Container(
+              
+              margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+              padding: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    user.name,
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  post.sujet,
+                  post.post,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      IconButton(
+                        icon: Icon(Icons.thumb_up),
+                        onPressed: () {
+                          setState(() {});
+                        },
+                      ),
+                      Text('0'),
+                      SizedBox(width: 10),
+                      IconButton(
+                        icon: Icon(Icons.comment),
+                        onPressed: () {
+                          // Action pour commenter
+                        },
+                      ),
+                      Text('0'),
+                    ],
+                  ),
+                ],
+              ),
+            );
+          },
+        ),
+      ],
     );
   }
 }
