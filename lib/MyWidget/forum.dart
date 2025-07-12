@@ -13,7 +13,7 @@ class Forum extends StatefulWidget {
 
 class _ForumState extends State<Forum> {
   //late Widget selectedWidgetForum;
-  final List<Widget> _widgetsForum = [PostForum(), Text("Community")];
+  final List<Widget> _widgetsForum = [PostForum(), Text("Forum Community")];
   late Widget _widgetsForumSelected;
 
   @override

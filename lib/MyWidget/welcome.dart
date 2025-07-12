@@ -48,20 +48,25 @@ class Welcome extends StatelessWidget {
                       );
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF5A231F), // marron foncé
+                      backgroundColor: Colors.white, // marron foncé
                       padding: const EdgeInsets.symmetric(
                         vertical: 16,
                         horizontal: 40,
                       ),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
+                        side: BorderSide(
+                          color: Color.fromARGB(255, 14, 165, 233), // marron foncé
+                          width: 2,
+                        ),
+                        
                       ),
                       elevation: 6,
                     ),
                     child: const Text(
                       'Connexion',
                       style: TextStyle(
-                        color: Color(0xFFFFC72C), // jaune doré
+                        color: Color.fromARGB(255, 14, 165, 233), // jaune doré
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
@@ -93,6 +98,10 @@ class Welcome extends StatelessWidget {
                       ),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
+                        side: BorderSide(
+                          color: Color(0xFFFFC72C), // jaune doré
+                          width: 2,
+                        ),
                       ),
                       elevation: 6,
                     ),

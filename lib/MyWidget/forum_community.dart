@@ -40,19 +40,23 @@ class _ForumCommunityState extends State<ForumCommunity> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-        itemCount: communitie.length,
-        itemBuilder: (context, index) {
-          return ListTile(
-            leading: CircleAvatar(
-              backgroundImage: AssetImage(
-                'assets/images/${communitie[index].imageUrl}',
-              ),
-            ),
-            title: Text(communitie[index].name),
-            subtitle: Text(communitie[index].description),
-          );
-        },
-      );
+    return Column(
+      children: [
+        ListView.builder(
+            itemCount: communitie.length,
+            itemBuilder: (context, index) {
+              return ListTile(
+                leading: CircleAvatar(
+                  backgroundImage: AssetImage(
+                    'assets/images/${communitie[index].imageUrl}',
+                  ),
+                ),
+                title: Text(communitie[index].name),
+                subtitle: Text(communitie[index].description),
+              );
+            },
+          ),
+      ],
+    );
   }
 }
