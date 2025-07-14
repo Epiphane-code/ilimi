@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ilimi/MyWidget/login_formuler.dart';
 import 'package:ilimi/MyWidget/welcome.dart';
-import 'class.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
