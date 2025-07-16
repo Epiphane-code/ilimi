@@ -25,9 +25,14 @@ class _AccueilFormateurState extends State<AccueilFormateur> {
       backgroundColor: Color(0xFFF9F4F4),
       appBar: AppBar(
         centerTitle: true,
+        leading: Text(""),
         title: Text(
           "Mon espace",
-          style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+          style: TextStyle(
+            fontSize: 15,
+            fontWeight: FontWeight.bold,
+            color: Color(0xFF5B271E),
+          ),
         ),
         // actions: [Icon(Icons.settings, size: 30)],
         backgroundColor: Color(0xFF0EA5E9),
