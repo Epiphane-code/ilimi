@@ -29,7 +29,7 @@ class _AccueilFormateurState extends State<AccueilFormateur> {
           "Mon espace",
           style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
         ),
-        actions: [Icon(Icons.settings, size: 30)],
+        // actions: [Icon(Icons.settings, size: 30)],
         backgroundColor: Color(0xFF0EA5E9),
       ),
       body: Column(
