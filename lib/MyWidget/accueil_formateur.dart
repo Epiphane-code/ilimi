@@ -49,7 +49,7 @@ class _ContenuAccueilFormateurState extends State<ContenuAccueilFormateur> {
                           onPressed: () {},
                           icon: Icon(
                             Icons.notifications,
-                            size: 30,
+                            size: 20,
                             color: Colors.white,
                           ),
                         ),
@@ -58,7 +58,7 @@ class _ContenuAccueilFormateurState extends State<ContenuAccueilFormateur> {
                           onPressed: () {},
                           icon: Icon(
                             Icons.settings,
-                            size: 30,
+                            size: 20,
                             color: Colors.white,
                           ),
                         ),
