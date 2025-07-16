@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ilimi/MyWidget/accueil_formateur.dart';
+import 'package:ilimi/MyWidget/interface_formateur.dart';
 import 'package:ilimi/MyWidget/my_botton_navigation_bar.dart';
 import 'package:ilimi/MyWidget/reset_password.dart';
 import 'register_screen.dart';
