@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ilimi/MyWidget/cours_body.dart';
 import 'package:ilimi/MyWidget/forum.dart';
-import 'package:ilimi/MyWidget/forum_post.dart';
 import 'profile.dart';
 import 'home_body.dart';
 // La barre de navigation
@@ -83,6 +82,7 @@ class _MyBottonNavigationBarState extends State<MyBottonNavigationBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFF9F4F4),
       appBar: AppBar(
         centerTitle: true,
         title: Text(

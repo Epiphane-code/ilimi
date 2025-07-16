@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ilimi/MyWidget/edit_profile.dart';
+import 'package:ilimi/MyWidget/register_screen.dart';
 import 'package:ilimi/MyWidget/welcome.dart';
+import 'package:ilimi/MyWidget/notification.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -54,7 +56,7 @@ class _ProfileState extends State<Profile> {
             children: [
               ListTile(
                 leading: Icon(Icons.person),
-                title: Text("Modifier le profil",),
+                title: Text("Modifier le profile"),
                 onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => EditProfile()),
@@ -66,18 +68,44 @@ class _ProfileState extends State<Profile> {
                 leading: Icon(Icons.school),
                 title: Text("Devenir formateur"),
                 trailing: Icon(Icons.chevron_right),
+                onTap: () {
+                  Future.delayed(Duration.zero, () {
+                    if (context.mounted) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Register()),
+                      );
+                    }
+                  });
+                },
               ),
 
               ListTile(
                 leading: Icon(Icons.notifications),
                 title: Text("Notifications"),
                 trailing: Icon(Icons.chevron_right),
+                onTap: () {
+                  Future.delayed(Duration.zero, () {
+                    if (context.mounted) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => NotificationClass(),
+                        ),
+                      );
+                    }
+                  });
+                },
               ),
 
               ListTile(
                 leading: Icon(Icons.language),
                 title: Text("Langue"),
-                trailing: Icon(Icons.chevron_right),
+                subtitle: Text(
+                  "Français",
+                  style: TextStyle(color: Colors.green, fontSize: 11),
+                ),
+                // trailing: Icon(Icons.chevron_right),
               ),
 
               ListTile(
@@ -96,10 +124,12 @@ class _ProfileState extends State<Profile> {
                 title: Text("Déconnexion", style: TextStyle(color: Colors.red)),
                 onTap: () {
                   Future.delayed(Duration.zero, () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Welcome()),
-                    );
+                    if (context.mounted) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Welcome()),
+                      );
+                    }
                   });
                 },
               ),

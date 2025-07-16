@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, annotate_overrides
+
 import 'package:flutter/material.dart';
 
 class Module {
@@ -48,12 +50,18 @@ class MesModules extends Module {
 class Users {
   final int id;
   final String name;
+  final String phone;
+  final String birth;
+  final String genre;
   final String email;
   final String imageUrl;
 
   Users({
     required this.id,
     required this.name,
+    required this.phone,
+    required this.birth,
+    required this.genre,
     required this.email,
     required this.imageUrl,
   });
@@ -86,5 +94,20 @@ class Community {
     required this.name,
     required this.description,
     required this.imageUrl,
+  });
+}
+
+class MessageNotification {
+  final int idNotification;
+  final int idUserDestinationNotification;
+  final String categorieNotification;
+  final String messageNotification;
+  final DateTime heureNotification;
+  MessageNotification({
+    required this.idNotification,
+    required this.categorieNotification,
+    required this.idUserDestinationNotification,
+    required this.messageNotification,
+    required this.heureNotification,
   });
 }

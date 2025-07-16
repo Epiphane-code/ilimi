@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:ilimi/MyWidget/accueil_formateur.dart';
 import 'package:ilimi/MyWidget/my_botton_navigation_bar.dart';
 import 'package:ilimi/MyWidget/reset_password.dart';
+import 'register_screen.dart';
 
 class LoginFormuler extends StatefulWidget {
   const LoginFormuler({super.key});
@@ -10,6 +12,7 @@ class LoginFormuler extends StatefulWidget {
 }
 
 class _LoginFormulerState extends State<LoginFormuler> {
+  final TextEditingController PassController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return (Container(
@@ -46,14 +49,14 @@ class _LoginFormulerState extends State<LoginFormuler> {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(12),
                 boxShadow: [
-                  /*BoxShadow(
+                  BoxShadow(
                     color: Colors.black.withValues(
                       alpha: 0.3,
                     ), // couleur de l’ombre
                     spreadRadius: 1,
                     blurRadius: 6,
                     offset: Offset(0, 4), // position de l’ombre (x, y)
-                  ),*/
+                  ),
                 ],
               ),
               child: TextFormField(
@@ -89,17 +92,20 @@ class _LoginFormulerState extends State<LoginFormuler> {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(12),
                 boxShadow: [
-                  /*BoxShadow(
+                  BoxShadow(
                     color: Colors.black.withValues(
                       alpha: 0.3,
                     ), // couleur de l’ombre
                     spreadRadius: 1,
                     blurRadius: 6,
                     offset: Offset(0, 4), // position de l’ombre (x, y)
-                  ),*/
+                  ),
                 ],
               ),
               child: TextFormField(
+                controller: PassController,
+                obscureText: true,
+                cursorColor: Colors.blue,
                 decoration: InputDecoration(
                   hintText: 'Entrez votre mot de passe',
                   filled: false,
@@ -143,12 +149,20 @@ class _LoginFormulerState extends State<LoginFormuler> {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => MyBottonNavigationBar(),
-                  ),
-                );
+                String name = PassController.text;
+                if (name == '1234') {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => AccueilFormateur()),
+                  );
+                } else {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => MyBottonNavigationBar(),
+                    ),
+                  );
+                }
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
@@ -169,7 +183,16 @@ class _LoginFormulerState extends State<LoginFormuler> {
                 children: [
                   Text("Vous n'avez pas de compte?  "),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Future.delayed(Duration.zero, () {
+                        if (context.mounted) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Register()),
+                          );
+                        }
+                      });
+                    },
                     child: const Text(
                       "S'inscrire",
                       style: TextStyle(

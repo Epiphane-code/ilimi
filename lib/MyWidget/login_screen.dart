@@ -15,19 +15,7 @@ class Login extends StatelessWidget {
           padding: EdgeInsets.only(top: 20),
           child: AppBar(
             backgroundColor: Color(0xFFF9F4F4),
-            leading: IconButton(
-              icon: Icon(Icons.chevron_left),
-              iconSize: 30,
-              onPressed: () {
-                runApp(
-                  MaterialApp(
-                    debugShowCheckedModeBanner: false,
 
-                    home: Welcome(),
-                  ),
-                );
-              },
-            ),
             title: Text(
               "Connexion",
               style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),

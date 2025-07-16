@@ -224,93 +224,82 @@ class _Home2screenState extends State<Home2screen> {
         // Vous pouvez ajouter ici un contenu dynamique selon le bouton sélectionné
         Expanded(
           child: SingleChildScrollView(
-            child: Padding(
+            child: Container(
               padding: EdgeInsets.all(16),
-              child: Center(
-                child: ListView.builder(
-                  shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
-                  itemCount: modules.length,
-                  itemBuilder: (context, index) {
-                    return Container(
-                      height: 310,
-                      margin: const EdgeInsets.symmetric(
-                        horizontal: 0,
-                        vertical: 0,
-                      ),
+              child: ListView.builder(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                itemCount: modules.length,
+                itemBuilder: (context, index) {
+                  return Container(
+                    height: 310,
 
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 0,
-                        vertical: 0,
-                      ),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20),
-                        // border: Border.all(color: Colors.blueAccent),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.start,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFF9F4F4),
+                      borderRadius: BorderRadius.circular(20),
+                      // border: Border.all(color: Colors.blueAccent),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
 
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(20),                      
-                            child: Image.asset(
-                              'assets/images/${modules[index].image_module}',
-                              height: 200,
-                              width: double.infinity,
-                              fit: BoxFit.cover,
-                            
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: Image.asset(
+                            'assets/images/${modules[index].image_module}',
+                            height: 200,
+                            width: double.infinity,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        Text(
+                          modules[index].categorie_module,
+                          style: TextStyle(color: Color(0xFF5B271E)),
+                        ),
+
+                        Text(
+                          modules[index].nom_module,
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+
+                        SizedBox(height: 0),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(modules[index].taille_module),
+                            Text(
+                              "|",
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
-                          ),
-                          Text(
-                            modules[index].categorie_module,
-                            style: TextStyle(color: Color(0xFF5B271E)),
-                          ),
-
-                          Text(
-                            modules[index].nom_module,
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
+                            Row(
+                              children: [
+                                Icon(Icons.star, size: 15),
+                                SizedBox(width: 10),
+                                Text(modules[index].note_module),
+                              ],
                             ),
-                          ),
+                            Text(
+                              "|",
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
 
-                          SizedBox(height: 0),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(modules[index].taille_module),
-                              Text(
-                                "|",
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              Row(
-                                children: [
-                                  Icon(Icons.star, size: 15),
-                                  SizedBox(width: 10),
-                                  Text(modules[index].note_module),
-                                ],
-                              ),
-                              Text(
-                                "|",
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-
-                              Text(modules[index].duree_module),
-                            ],
-                          ),
-                        ],
-                      ),
-                    );
-                  },
-                ),
+                            Text(modules[index].duree_module),
+                          ],
+                        ),
+                      ],
+                    ),
+                  );
+                },
               ),
             ),
           ),

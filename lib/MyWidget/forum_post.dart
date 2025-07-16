@@ -120,30 +120,45 @@ class _PostForumState extends State<PostForum> {
       Users(
         id: 1,
         name: 'Abbass',
+        phone: '96008844',
+        birth: '11/02/1995',
+        genre: 'M',
         email: 'user1@example.com',
         imageUrl: 'https://example.com/user1.jpg',
       ),
       Users(
         id: 2,
         name: 'Ismo',
+        phone: '96008844',
+        birth: '11/02/1995',
+        genre: 'M',
         email: 'user2@example.com',
         imageUrl: 'https://example.com/user2.jpg',
       ),
       Users(
         id: 3,
         name: 'Nana',
+        phone: '96008844',
+        birth: '11/02/1995',
+        genre: 'F',
         email: 'user3@example.com',
         imageUrl: 'https://example.com/user3.jpg',
       ),
       Users(
         id: 4,
         name: 'Bello',
+        phone: '96008844',
+        birth: '11/02/1995',
+        genre: 'M',
         email: 'user4@example.com',
         imageUrl: 'https://example.com/user4.jpg',
       ),
       Users(
         id: 5,
         name: 'Issa',
+        phone: '96008844',
+        birth: '11/02/1995',
+        genre: 'M',
         email: 'user5@example.com',
         imageUrl: 'https://example.com/user5.jpg',
       ),
@@ -169,7 +184,6 @@ class _PostForumState extends State<PostForum> {
             final post = forumPosts[index];
             final user = users.firstWhere((u) => u.id == post.idUser);
             return Container(
-              
               margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(

@@ -325,7 +325,16 @@ class _RegisterFormulerState extends State<RegisterFormuler> {
                 children: [
                   Text("Vous avez dèja un compte?  "),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Future.delayed(Duration.zero, () {
+                        if (context.mounted) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Login()),
+                          );
+                        }
+                      });
+                    },
                     child: const Text(
                       "Se connecter",
                       style: TextStyle(
