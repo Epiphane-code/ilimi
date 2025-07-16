@@ -20,6 +20,10 @@ class _EditProfileState extends State<EditProfile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 249, 244, 244),
+
+      ),
       backgroundColor: Color.fromARGB(255, 249, 244, 244), // Setting the background color
       body: SafeArea(
         child: SingleChildScrollView (
@@ -28,18 +32,7 @@ class _EditProfileState extends State<EditProfile> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               // Setting the back button
-              Align(
-                alignment: Alignment.centerLeft,
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                  child: Icon(
-                    Icons.arrow_back_ios,
-                    size: 30,
-                    ),
-                ),
-              ),
+              
               SizedBox(height: 10), // Adding space between the back button and the Profile Picture
 
               // Profile picture

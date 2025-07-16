@@ -3,6 +3,7 @@ import 'package:ilimi/MyWidget/cours_body.dart';
 import 'package:ilimi/MyWidget/forum.dart';
 import 'profile.dart';
 import 'home_body.dart';
+import 'notification.dart';
 // La barre de navigation
 
 class MyBottonNavigationBar extends StatefulWidget {
@@ -35,10 +36,24 @@ class _MyBottonNavigationBarState extends State<MyBottonNavigationBar> {
   void initState() {
     super.initState(); // ou _myIcon = [];
 
-    homeNotificationWidget = Icon(
-      Icons.notifications,
-      color: Color(0xFF5B271E),
-      size: 25,
+    homeNotificationWidget = IconButton(
+      onPressed: (){
+         Future.delayed(Duration.zero, () {
+                    if (context.mounted) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => NotificationClass(),
+                        ),
+                      );
+                    }
+                  });
+      },
+      icon: Icon(
+        Icons.notifications,
+        color: Colors.white,
+        size: 25,
+      ),
     );
 
     iconAppBar = [
@@ -53,9 +68,9 @@ class _MyBottonNavigationBarState extends State<MyBottonNavigationBar> {
     myTextColor = Color(0xFFFFFFFF);
     _myColor = <Color>[
       Color(0xFF0EA5E9),
-      Color.fromRGBO(251, 249, 249, 0.945),
-      Color.fromRGBO(251, 249, 249, 0.945),
-      Color.fromRGBO(251, 249, 249, 0.945),
+      Color.fromARGB(255, 249, 244, 244),
+      Color.fromARGB(255, 249, 244, 244),
+     Color.fromARGB(255, 249, 244, 244),
     ];
 
     _myTextColor = <Color>[
@@ -84,6 +99,7 @@ class _MyBottonNavigationBarState extends State<MyBottonNavigationBar> {
     return Scaffold(
       backgroundColor: Color(0xFFF9F4F4),
       appBar: AppBar(
+        leading: Text(""),
         centerTitle: true,
         title: Text(
           mytexte,
