@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ilimi/MyWidget/ajouter_cours_screen.dart';
 import 'accueil_formateur.dart';
 
 class AccueilFormateur extends StatefulWidget {
@@ -17,7 +18,12 @@ class _AccueilFormateurState extends State<AccueilFormateur> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+           Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Ajouter()),
+                      );
+        },
         backgroundColor: Color(0xFFFFC727),
         child: Icon(Icons.add, size: 50, color: Color(0xFF5B271E)),
       ),

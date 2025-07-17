@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:ilimi/MyWidget/login_screen.dart';
 
-class RegisterFormuler extends StatefulWidget {
-  const RegisterFormuler({super.key});
+class AjouterFormuler extends StatefulWidget {
+  const AjouterFormuler({super.key});
 
   @override
-  State<RegisterFormuler> createState() => _RegisterFormulerState();
+  State<AjouterFormuler> createState() => _RegisterFormulerState();
 }
 
-class _RegisterFormulerState extends State<RegisterFormuler> {
+class _RegisterFormulerState extends State<AjouterFormuler> {
   String? selectedRole; // "apprenant" ou "formateur"
   @override
   Widget build(BuildContext context) {
