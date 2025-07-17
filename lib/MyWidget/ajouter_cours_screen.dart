@@ -17,7 +17,7 @@ class Ajouter extends StatelessWidget {
             backgroundColor: Color(0xFFF9F4F4),
 
             title: Text(
-              "Connexion",
+              "Nouveau cours",
               style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
             ),
             centerTitle: true,
@@ -34,10 +34,10 @@ class Ajouter extends StatelessWidget {
 
                 children: [
                   // Logo
-                  Image.asset(
-                    'assets/images/ilimi_logo.png', // logo
-                    height: 100,
-                  ),
+                  //Image.asset(
+                   // 'assets/images/ilimi_logo.png', // logo
+                   // height: 100,
+                 // ),
                   const SizedBox(height: 10),
 
                   AjouterFormuler(),

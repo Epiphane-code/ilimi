@@ -17,25 +17,25 @@ class _RegisterFormulerState extends State<AjouterFormuler> {
       child: Form(
         child: Column(
           children: [
-            Text(
-              "Commençons !",
-              style: TextStyle(
-                fontSize: 24,
-                color: Color(0xFF202244),
-                fontFamily: 'Jost',
-                fontWeight: FontWeight.w600,
-                height: 1.0,
-                letterSpacing: 0.0,
-              ),
-            ),
+            //Text(
+             // "Commençons !",
+            //  style: TextStyle(
+              //  fontSize: 24,
+              //  color: Color(0xFF202244),
+              //  fontFamily: 'Jost',
+              // fontWeight: FontWeight.w600,
+              //  height: 1.0,
+             //   letterSpacing: 0.0,
+            //  ),
+          //  ),
 
-            Text("Créez un compte pour suivre vos cours"),
-            const SizedBox(height: 10),
+           // Text("Créez un compte pour suivre vos cours"),
+           // const SizedBox(height: 10),
             Center(
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  "Email",
+                  "Nom du cours",
                   style: TextStyle(fontWeight: FontWeight.w600),
                 ),
               ),
@@ -57,7 +57,7 @@ class _RegisterFormulerState extends State<AjouterFormuler> {
               ),
               child: TextFormField(
                 decoration: InputDecoration(
-                  hintText: 'Entrez votre adresse mail',
+                  hintText: 'Nom du cours',
                   filled: true,
                   fillColor: Colors.white,
                   contentPadding: const EdgeInsets.symmetric(
@@ -83,7 +83,7 @@ class _RegisterFormulerState extends State<AjouterFormuler> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Text(
-                        'Prénom',
+                        'Description',
                         style: TextStyle(fontWeight: FontWeight.w600),
                       ),
 
@@ -101,14 +101,14 @@ class _RegisterFormulerState extends State<AjouterFormuler> {
                         ),
                         child: TextFormField(
                           decoration: InputDecoration(
-                            hintText: 'Entrez votre Prenom',
+                           // hintText: 'Description',
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(12),
                               borderSide: BorderSide.none,
                             ),
                             contentPadding: EdgeInsets.symmetric(
-                              horizontal: 16,
-                              vertical: 8,
+                              horizontal: 50,
+                              vertical: 100,
                             ),
                             filled: true,
                             fillColor: Colors.white,
@@ -126,39 +126,39 @@ class _RegisterFormulerState extends State<AjouterFormuler> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        'Nom',
-                        style: TextStyle(fontWeight: FontWeight.w600),
-                      ),
+                      //const Text(
+                       // 'Nom',
+                      //  style: TextStyle(fontWeight: FontWeight.w600),
+                    //  ),
 
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(12),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withValues(alpha: 0.3),
-                              blurRadius: 6,
-                              offset: Offset(0, 3),
-                            ),
-                          ],
-                        ),
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                            hintText: 'Entrez votre Nom',
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(12),
-                              borderSide: BorderSide.none,
-                            ),
-                            contentPadding: EdgeInsets.symmetric(
-                              horizontal: 16,
-                              vertical: 8,
-                            ),
-                            filled: true,
-                            fillColor: Colors.white,
-                          ),
-                        ),
-                      ),
+                     // Container(
+                      //  decoration: BoxDecoration(
+                        //  color: Colors.white,
+                        // borderRadius: BorderRadius.circular(12),
+                        //  boxShadow: [
+                         //   BoxShadow(
+                           //   color: Colors.black.withValues(alpha: 0.3),
+                            //  blurRadius: 6,
+                            //  offset: Offset(0, 3),
+                           // ),
+                       //  ],
+                      //  ),
+                       // child: TextFormField(
+                       //  decoration: InputDecoration(
+                       //     hintText: 'Entrez votre Nom',
+                         //   border: OutlineInputBorder(
+                          //    borderRadius: BorderRadius.circular(12),
+                           //   borderSide: BorderSide.none,
+                         //   ),
+                         //   contentPadding: EdgeInsets.symmetric(
+                          //    horizontal: 16,
+                           //   vertical: 8,
+                          //  ),
+                          //  filled: true,
+                          //  fillColor: Colors.white,
+                       //   ),
+                     //   ),
+                    //  ),
                     ],
                   ),
                 ),
@@ -170,7 +170,7 @@ class _RegisterFormulerState extends State<AjouterFormuler> {
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  "Mot de passe",
+                  "Partition",
                   style: TextStyle(fontWeight: FontWeight.w600),
                 ),
               ),
@@ -193,7 +193,7 @@ class _RegisterFormulerState extends State<AjouterFormuler> {
               ),
               child: TextFormField(
                 decoration: InputDecoration(
-                  hintText: 'Entrez votre mot de passe',
+                 // hintText: 'Entrez votre mot de passe',
                   filled: true,
                   fillColor: Colors.white,
                   contentPadding: const EdgeInsets.symmetric(
@@ -213,7 +213,7 @@ class _RegisterFormulerState extends State<AjouterFormuler> {
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  "Confirmation",
+                  "Vidéo",
                   style: TextStyle(fontWeight: FontWeight.w600),
                 ),
               ),
@@ -236,7 +236,7 @@ class _RegisterFormulerState extends State<AjouterFormuler> {
               ),
               child: TextFormField(
                 decoration: InputDecoration(
-                  hintText: 'Confirmez votre mot de passe',
+                 // hintText: 'Confirmez votre mot de passe',
                   filled: true,
                   fillColor: Colors.white,
                   contentPadding: const EdgeInsets.symmetric(
@@ -253,7 +253,7 @@ class _RegisterFormulerState extends State<AjouterFormuler> {
 
             const SizedBox(height: 10),
 
-            Padding(
+            /*Padding(
               padding: const EdgeInsets.all(5),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -295,7 +295,7 @@ class _RegisterFormulerState extends State<AjouterFormuler> {
                   ),
                 ],
               ),
-            ),
+            ), */
 
             const SizedBox(height: 10),
             ElevatedButton(
@@ -308,20 +308,20 @@ class _RegisterFormulerState extends State<AjouterFormuler> {
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
-                fixedSize: const Size(250, 40),
+                fixedSize: const Size(200, 40),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
               ),
               child: Text(
-                "Créer un compte",
+                "Save",
                 style: TextStyle(color: Color(0xFFFFFFFF)),
               ),
             ),
             const SizedBox(height: 10),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
-              child: Row(
+             /* child: Row(
                 children: [
                   Text("Vous avez dèja un compte?  "),
                   GestureDetector(
@@ -344,7 +344,7 @@ class _RegisterFormulerState extends State<AjouterFormuler> {
                     ),
                   ),
                 ],
-              ),
+              ),*/
             ),
           ],
         ),
