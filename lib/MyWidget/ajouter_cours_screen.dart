@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ilimi/MyWidget/class.dart';
 //import 'welcome.dart';
 import 'ajouter_cours_formuler.dart';
 
@@ -14,7 +15,7 @@ class Ajouter extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.only(top: 20),
           child: AppBar(
-            backgroundColor: Color(0xFFF9F4F4),
+            backgroundColor: MesCouleurs.blancPrincipale,
 
             title: Text(
               "Nouveau cours",
@@ -32,16 +33,7 @@ class Ajouter extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
 
-                children: [
-                  // Logo
-                  //Image.asset(
-                   // 'assets/images/ilimi_logo.png', // logo
-                   // height: 100,
-                 // ),
-                  const SizedBox(height: 10),
-
-                  AjouterFormuler(),
-                ],
+                children: [const SizedBox(height: 10), AjouterFormuler()],
               ),
             ),
           ),

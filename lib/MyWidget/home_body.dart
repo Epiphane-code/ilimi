@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
 import 'class.dart';
+import 'dataList.dart';
 
 class Home2screen extends StatefulWidget {
   const Home2screen({super.key});
@@ -11,61 +11,6 @@ class Home2screen extends StatefulWidget {
 
 class _Home2screenState extends State<Home2screen> {
   int selectedIndex = 0;
-  List<Module> modules = [];
-
-  final List<String> menuItems = [
-    'Tous',
-    'Populaires',
-    'Graphic Design',
-    'Developpement',
-    'Informatique',
-  ];
-
-  @override
-  void initState() {
-    super.initState();
-
-    modules.add(
-      Module(
-        nom_module: 'Creer un site web avec Html et Css',
-        categorie_module: 'Developpement Web',
-        image_module: 'html.png',
-        taille_module: '27 Page',
-        duree_module: '72h',
-        note_module: '3.5',
-      ),
-    );
-    modules.add(
-      Module(
-        nom_module: 'Bureautique',
-        categorie_module: 'Informatique',
-        image_module: 'bureautique.png',
-        taille_module: '45 Page',
-        duree_module: '79h',
-        note_module: '5',
-      ),
-    );
-    modules.add(
-      Module(
-        nom_module: 'Flutter',
-        categorie_module: 'Developpement mobile',
-        image_module: 'flutter.png',
-        taille_module: '50 Page',
-        duree_module: '10h',
-        note_module: '3.1',
-      ),
-    );
-    modules.add(
-      Module(
-        nom_module: 'Dessin et Numerique',
-        categorie_module: 'Arts',
-        image_module: 'dessin.png',
-        taille_module: '150 Page',
-        duree_module: '72h',
-        note_module: '2.5',
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -74,33 +19,53 @@ class _Home2screenState extends State<Home2screen> {
         Container(
           width: double.infinity,
           height: 120,
-          color: Color(0xFF0EA5E9),
+          color: MesCouleurs.bleuPrincipale,
           child: Stack(
             children: [
               Positioned(
                 top: 10,
                 left: 30,
-                child: Icon(Icons.star, color: Colors.yellow, size: 14),
+                child: Icon(
+                  Icons.star,
+                  color: MesCouleurs.jaunePrincipale,
+                  size: 14,
+                ),
               ),
               Positioned(
                 top: 10,
                 right: 10,
-                child: Icon(Icons.star, color: Colors.yellow, size: 24),
+                child: Icon(
+                  Icons.star,
+                  color: MesCouleurs.jaunePrincipale,
+                  size: 24,
+                ),
               ),
               Positioned(
                 top: 30,
                 left: 300,
-                child: Icon(Icons.star, color: Colors.yellow, size: 14),
+                child: Icon(
+                  Icons.star,
+                  color: MesCouleurs.jaunePrincipale,
+                  size: 14,
+                ),
               ),
               Positioned(
                 top: 50,
                 right: 20,
-                child: Icon(Icons.star, color: Colors.yellow[200], size: 20),
+                child: Icon(
+                  Icons.star,
+                  color: MesCouleurs.jaunePrincipale,
+                  size: 20,
+                ),
               ),
               Positioned(
                 bottom: 40,
                 left: 60,
-                child: Icon(Icons.star, color: Colors.white, size: 18),
+                child: Icon(
+                  Icons.star,
+                  color: MesCouleurs.jaunePrincipale,
+                  size: 18,
+                ),
               ),
               Center(
                 child: Column(
@@ -115,7 +80,7 @@ class _Home2screenState extends State<Home2screen> {
                               Text(
                                 "Bonjour,",
                                 style: TextStyle(
-                                  color: Colors.white,
+                                  color: MesCouleurs.blancPrincipale,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 20,
                                 ),
@@ -124,7 +89,7 @@ class _Home2screenState extends State<Home2screen> {
                               Text(
                                 "Bienvenue",
                                 style: TextStyle(
-                                  color: Colors.white,
+                                  color: MesCouleurs.blancPrincipale,
                                   fontSize: 16,
                                 ),
                               ),
@@ -140,23 +105,15 @@ class _Home2screenState extends State<Home2screen> {
                       margin: EdgeInsets.symmetric(horizontal: 50),
                       padding: EdgeInsets.symmetric(horizontal: 17),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: MesCouleurs.blancPrincipale,
                         borderRadius: BorderRadius.circular(18),
-                        /*boxShadow: [
-                          BoxShadow(
-                            color: Colors.black,
-                            spreadRadius: 1,
-                            blurRadius: 6,
-                            offset: Offset(0, 0),
-                          ),
-                        ],*/
                       ),
                       child: TextFormField(
                         decoration: InputDecoration(
                           hintText: 'Chercher un thème',
                           prefixIcon: Icon(Icons.search),
                           filled: true,
-                          fillColor: Colors.white,
+                          fillColor: MesCouleurs.blancPrincipale,
                           contentPadding: EdgeInsets.symmetric(
                             horizontal: 16,
                             vertical: 8,
@@ -174,14 +131,7 @@ class _Home2screenState extends State<Home2screen> {
             ],
           ),
         ),
-        //SizedBox(height: 10),
-        /*Container(
-          color: Color(0xFFF9F4F4),
-          child: Text(
-            "Cours",
-            style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-          ),
-        ),*/
+
         SizedBox(height: 10),
         SizedBox(
           height: 37,
@@ -189,7 +139,7 @@ class _Home2screenState extends State<Home2screen> {
             shrinkWrap: true,
             //physics: NeverScrollableScrollPhysics(),
             scrollDirection: Axis.horizontal,
-            itemCount: menuItems.length,
+            itemCount: categoriesModules.length,
             itemBuilder: (context, index) {
               bool isSelected = selectedIndex == index;
               return GestureDetector(
@@ -202,14 +152,16 @@ class _Home2screenState extends State<Home2screen> {
                   margin: EdgeInsets.symmetric(horizontal: 8),
                   padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
                   decoration: BoxDecoration(
-                    color: isSelected ? Color(0xFFFFC727) : Color(0xFF5B271E),
+                    color: isSelected
+                        ? MesCouleurs.jaunePrincipale
+                        : MesCouleurs.marronPrincipale,
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Center(
                     child: Text(
-                      menuItems[index],
+                      categoriesModules[index],
                       style: TextStyle(
-                        color: Colors.white,
+                        color: MesCouleurs.blancPrincipale,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -221,87 +173,82 @@ class _Home2screenState extends State<Home2screen> {
         ),
 
         SizedBox(height: 10),
-        // Vous pouvez ajouter ici un contenu dynamique selon le bouton sélectionné
+
         Expanded(
-          child: SingleChildScrollView(
-            child: Container(
-              padding: EdgeInsets.all(16),
-              child: ListView.builder(
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                itemCount: modules.length,
-                itemBuilder: (context, index) {
-                  return Container(
-                    height: 310,
+          child: ListView.builder(
+            //shrinkWrap: true,
+            //physics: NeverScrollableScrollPhysics(),
+            itemCount: mesModules.length,
+            itemBuilder: (context, index) {
+              return Card(
+                margin: EdgeInsets.fromLTRB(20, 10, 20, 10),
 
-                    decoration: BoxDecoration(
-                      color: Color(0xFFF9F4F4),
-                      borderRadius: BorderRadius.circular(20),
-                      // border: Border.all(color: Colors.blueAccent),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
+                child: Container(
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.white,
+                  ),
 
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-                          child: Image.asset(
-                            'assets/images/${modules[index].image_module}',
-                            height: 200,
-                            width: double.infinity,
-                            fit: BoxFit.cover,
+                  child: Column(
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image.asset(
+                          'assets/images/${mesModules[index].image_module}',
+                          height: 150,
+                          width: double.infinity,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      Text(
+                        mesModules[index].categorie_module,
+                        style: TextStyle(color: MesCouleurs.marronPrincipale),
+                      ),
+
+                      Text(
+                        mesModules[index].nom_module,
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+
+                      SizedBox(height: 0),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(mesModules[index].taille_module),
+                          Text(
+                            "|",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                        Text(
-                          modules[index].categorie_module,
-                          style: TextStyle(color: Color(0xFF5B271E)),
-                        ),
-
-                        Text(
-                          modules[index].nom_module,
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
+                          Row(
+                            children: [
+                              Icon(Icons.star, size: 15),
+                              SizedBox(width: 10),
+                              Text(mesModules[index].note_module),
+                            ],
                           ),
-                        ),
+                          Text(
+                            "|",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
 
-                        SizedBox(height: 0),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(modules[index].taille_module),
-                            Text(
-                              "|",
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Row(
-                              children: [
-                                Icon(Icons.star, size: 15),
-                                SizedBox(width: 10),
-                                Text(modules[index].note_module),
-                              ],
-                            ),
-                            Text(
-                              "|",
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-
-                            Text(modules[index].duree_module),
-                          ],
-                        ),
-                      ],
-                    ),
-                  );
-                },
-              ),
-            ),
+                          Text(mesModules[index].duree_module),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            },
           ),
         ),
       ],

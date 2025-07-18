@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:ilimi/MyWidget/dataList.dart';
-import 'class.dart';
 import 'notification.dart';
 import 'login_screen.dart';
 
-class ContenuAccueilFormateur extends StatefulWidget {
-  const ContenuAccueilFormateur({super.key});
+class ContenuAccueilFormateur2 extends StatefulWidget {
+  const ContenuAccueilFormateur2({super.key});
 
   @override
-  State<ContenuAccueilFormateur> createState() =>
+  State<ContenuAccueilFormateur2> createState() =>
       _ContenuAccueilFormateurState();
 }
 
-class _ContenuAccueilFormateurState extends State<ContenuAccueilFormateur> {
+class _ContenuAccueilFormateurState extends State<ContenuAccueilFormateur2> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -308,70 +307,48 @@ class _ContenuAccueilFormateurState extends State<ContenuAccueilFormateur> {
             child: ListView.builder(
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
-              itemCount: mesModules.length,
+              itemCount: forumPosts.length,
               itemBuilder: (context, index) {
-                MesModules module = mesModules[index];
-                return Card(
-                  child: Container(
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Colors.white,
-                    ),
-                    child: ListTile(
-                      leading: Image.asset(
-                        'assets/images/${module.image_module}',
-                        width: 50,
-                        height: 50,
+                final post = forumPosts[index];
+                final user = users.firstWhere((u) => u.id == post.idUser);
+                return Container(
+                  margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        user.name,
+                        style: TextStyle(fontWeight: FontWeight.bold),
                       ),
-                      title: Text(
-                        module.nom_module,
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      subtitle: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                      post.sujet,
+                      post.post,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          Text(
-                            module.categorie_module,
-                            style: TextStyle(color: Colors.grey, fontSize: 14),
+                          IconButton(
+                            icon: Icon(Icons.thumb_up),
+                            onPressed: () {
+                              setState(() {});
+                            },
                           ),
-                          Text(
-                            module.duree_module,
-                            style: TextStyle(fontSize: 14),
+                          Text('0'),
+                          SizedBox(width: 10),
+                          IconButton(
+                            icon: Icon(Icons.comment),
+                            onPressed: () {
+                              // Action pour commenter
+                            },
                           ),
-                          Text(
-                            module.taille_module,
-                            style: TextStyle(color: Colors.grey, fontSize: 14),
-                          ),
-                          /*LinearProgressIndicator(
-                            value: module.niveau / 100, // 70%
-                            backgroundColor: Colors.grey[300],
-                            valueColor: AlwaysStoppedAnimation<Color>(
-                              Colors.blue,
-                            ),
-                          ),*/
+                          Text('0'),
                         ],
                       ),
-                      trailing: Text(
-                        module.note_module,
-                        style: TextStyle(
-                          color: MesCouleurs.jaunePrincipale,
-                          fontSize: 16,
-                        ),
-                      ),
-                      onTap: () {
-                        // Action à effectuer lors de l'appui sur le module
-                        /* Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => MyBottonNavigationBar(),
-                        ),
-                      ); */
-                      },
-                    ),
+                    ],
                   ),
                 );
               },

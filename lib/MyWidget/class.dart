@@ -1,7 +1,9 @@
-// ignore_for_file: non_constant_identifier_names, annotate_overrides
+// ignore_for_file: non_constant_identifier_names
 
 import 'package:flutter/material.dart';
 
+/////////////////////// La class Module /////////////////////////////////////
+// 1.
 class Module {
   String nom_module;
   String categorie_module;
@@ -19,6 +21,9 @@ class Module {
     required this.note_module,
   });
 }
+
+//////////////////// La class MesModules qui herite Module /////////////////////////////
+// 2.
 
 class MesModules extends Module {
   String nom_module;
@@ -47,6 +52,8 @@ class MesModules extends Module {
        );
 }
 
+//////////////////// La class Users ////////////////////////////
+// 3.
 class Users {
   final int id;
   final String name;
@@ -67,6 +74,8 @@ class Users {
   });
 }
 
+//////////////////////////// La class Publication Forum /////////////////////////
+// 4.
 class ForumPost {
   final int id;
   final int idUser;
@@ -85,6 +94,9 @@ class ForumPost {
   });
 }
 
+////////////////////////// La class Communauté /////////////////////////////////!SECTION
+// 5.
+
 class Community {
   final String name;
   final String description;
@@ -96,6 +108,9 @@ class Community {
     required this.imageUrl,
   });
 }
+
+///////////////////// La class Message de notification //////////////////////////////
+// 6.
 
 class MessageNotification {
   final int idNotification;
@@ -111,3 +126,24 @@ class MessageNotification {
     required this.heureNotification,
   });
 }
+
+//////////////////////// La class des couleurs principales ////////////////////////////!SECTION
+// 7.
+
+class MesCouleurs {
+  static Color bleuPrincipale = Color(0xFF0EA5E9);
+  static Color jaunePrincipale = Color(0xFFFFC727);
+  static Color marronPrincipale = Color(0xFF5B271E);
+  static Color blancPrincipale = Color(0xFFF9F4F4);
+}
+
+////////////////////////// La class des categories cours ////////////////////////////////!SECTION
+/// 8.
+
+final List<String> categoriesModules = [
+  'Tous',
+  'Populaires',
+  'Graphic Design',
+  'Developpement',
+  'Informatique',
+];

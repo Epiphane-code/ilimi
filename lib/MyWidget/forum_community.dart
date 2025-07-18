@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'class.dart';
+import 'dataList.dart';
 
 class ForumCommunity extends StatefulWidget {
   const ForumCommunity({super.key});
@@ -9,50 +9,7 @@ class ForumCommunity extends StatefulWidget {
 }
 
 class _ForumCommunityState extends State<ForumCommunity> {
-  late List<Community> communitie;
-
-  @override
-  void initState() {
-    super.initState();
-    communitie = [
-      Community(
-        name: "Flutter Devs",
-        description: "Communauté pour le developpement Flutter",
-        imageUrl: "flutter_devs.png",
-      ),
-      Community(
-        name: "Dart Enthusiasts",
-        description: "La meilleur communauté Dart",
-        imageUrl: "dart_enthusiasts.png",
-      ),
-      Community(
-        name: "Web Developers",
-        description: "Discussions pour le dev web",
-        imageUrl: "web_developers.png",
-      ),
-      Community(
-        name: "Mobile App Developers",
-        description: "Devenez dev mobile",
-        imageUrl: "mobile_app_devs.png",
-      ),
-      Community(
-        name: "Dart Enthusiasts",
-        description: "La meilleur communauté Dart",
-        imageUrl: "dart_enthusiasts.png",
-      ),
-      Community(
-        name: "Dart Enthusiasts",
-        description: "La meilleur communauté Dart",
-        imageUrl: "dart_enthusiasts.png",
-      ),
-      Community(
-        name: "Web Developers",
-        description: "Discussions pour le dev web",
-        imageUrl: "web_developers.png",
-      ),
-    ];
-  }
-
+  //late List<Community> communitie
   @override
   Widget build(BuildContext context) {
     return ListView.builder(

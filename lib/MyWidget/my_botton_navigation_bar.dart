@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:ilimi/MyWidget/class.dart';
 import 'package:ilimi/MyWidget/cours_body.dart';
 import 'package:ilimi/MyWidget/forum.dart';
 import 'profile.dart';
 import 'home_body.dart';
 import 'notification.dart';
+import 'dataList.dart';
 // La barre de navigation
 
 class MyBottonNavigationBar extends StatefulWidget {
@@ -37,23 +39,17 @@ class _MyBottonNavigationBarState extends State<MyBottonNavigationBar> {
     super.initState(); // ou _myIcon = [];
 
     homeNotificationWidget = IconButton(
-      onPressed: (){
-         Future.delayed(Duration.zero, () {
-                    if (context.mounted) {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => NotificationClass(),
-                        ),
-                      );
-                    }
-                  });
+      onPressed: () {
+        Future.delayed(Duration.zero, () {
+          if (context.mounted) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => NotificationClass()),
+            );
+          }
+        });
       },
-      icon: Icon(
-        Icons.notifications,
-        color: Colors.white,
-        size: 25,
-      ),
+      icon: Icon(Icons.notifications, color: Colors.white, size: 25),
     );
 
     iconAppBar = [
@@ -64,17 +60,17 @@ class _MyBottonNavigationBarState extends State<MyBottonNavigationBar> {
     ];
 
     mytexte = _myText[0];
-    apBarColorBlue = Color(0xFF0EA5E9);
+    apBarColorBlue = MesCouleurs.bleuPrincipale;
     myTextColor = Color(0xFFFFFFFF);
     _myColor = <Color>[
-      Color(0xFF0EA5E9),
-      Color.fromARGB(255, 249, 244, 244),
-      Color.fromARGB(255, 249, 244, 244),
-     Color.fromARGB(255, 249, 244, 244),
+      MesCouleurs.bleuPrincipale,
+      MesCouleurs.blancPrincipale,
+      MesCouleurs.blancPrincipale,
+      MesCouleurs.blancPrincipale,
     ];
 
     _myTextColor = <Color>[
-      Color.fromRGBO(251, 249, 249, 0.945),
+      MesCouleurs.blancPrincipale,
       Color(0xFF000000),
       Color(0xFF000000),
       Color(0xFF000000),

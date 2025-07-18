@@ -265,6 +265,8 @@ class _RegisterFormulerState extends State<RegisterFormuler> {
                         onChanged: (bool? value) {
                           setState(() {
                             selectedRole = value! ? 'apprenant' : null;
+                            print(value);
+                            print(selectedRole);
                           });
                         },
                       ),
@@ -284,6 +286,8 @@ class _RegisterFormulerState extends State<RegisterFormuler> {
                         onChanged: (bool? value) {
                           setState(() {
                             selectedRole = value! ? 'formateur' : null;
+                            print(value);
+                            print(selectedRole);
                           });
                         },
                       ),
