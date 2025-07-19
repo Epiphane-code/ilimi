@@ -89,6 +89,8 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
 flutter_launcher_icons:
-  image_path: "assets/icon_ilimi.png" # ← à remplacer par le nom exact du PNG généré
+  image_path_android: "assets/icon_ilimi.png" # ← à remplacer par le nom exact du PNG généré
+  image_path_ios: "assets/icon_ios.png"
   android: true
   ios: true
+  remove_alpha_ios: true
