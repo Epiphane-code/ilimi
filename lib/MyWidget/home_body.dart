@@ -196,7 +196,7 @@ class _Home2screenState extends State<Home2screen> {
                         borderRadius: BorderRadius.circular(20),
                         child: Image.asset(
                           'assets/images/${mesModules[index].image_module}',
-                          height: 150,
+                          height: 100,
                           width: double.infinity,
                           fit: BoxFit.cover,
                         ),

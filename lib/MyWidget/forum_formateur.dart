@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ilimi/MyWidget/dataList.dart';
-import 'notification.dart';
-import 'login_screen.dart';
+import 'package:ilimi/MyWidget/class.dart';
+import 'forum_post.dart';
+import 'forum_community.dart';
 
 class ContenuAccueilFormateur2 extends StatefulWidget {
   const ContenuAccueilFormateur2({super.key});
@@ -12,351 +12,135 @@ class ContenuAccueilFormateur2 extends StatefulWidget {
 }
 
 class _ContenuAccueilFormateurState extends State<ContenuAccueilFormateur2> {
+  final List<Widget> _widgetsForum = [PostForum(), ForumCommunity()];
+  late Widget _widgetsForumSelected;
+  Color colorSelected = MesCouleurs.jaunePrincipale;
+  Color colorNoSelected = MesCouleurs.marronPrincipale;
+  late Color colorValeur;
+  late Color colorValeur2;
+
+  @override
+  void initState() {
+    super.initState();
+    colorValeur = colorSelected;
+    colorValeur2 = colorNoSelected;
+    _widgetsForumSelected = _widgetsForum[0];
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
+        SizedBox(height: 10),
         Container(
-          color: Color(0xFF0EA5E9),
-          child: Column(
+          //margin: EdgeInsets.symmetric(vertical: 0),
+          //padding: EdgeInsets.all(0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    margin: EdgeInsets.only(left: 15),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Bonjour,",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Text(
-                          "Nana Fourera Omar",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ],
+              Flexible(
+                flex: 1,
+                child: Container(
+                  margin: EdgeInsets.only(left: 20),
+                  padding: EdgeInsets.all(0),
+                  height: 30,
+                  //width: 250,
+                  //margin: EdgeInsets.only(left: 0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(100),
+                    border: Border.all(
+                      width: 1,
+                      style: BorderStyle.solid,
+                      color: MesCouleurs.marronPrincipale,
                     ),
                   ),
-                  Row(
-                    children: [
-                      IconButton(
-                        onPressed: () {
-                          Future.delayed(Duration.zero, () {
-                            if (context.mounted) {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => NotificationClass(),
-                                ),
-                              );
-                            }
-                          });
-                        },
-                        icon: Icon(
-                          Icons.notifications,
-                          size: 25,
-                          color: Colors.white,
-                        ),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.search, color: Colors.black),
+
+                      //labelText: 'Recherche',
+                      hintStyle: TextStyle(color: Colors.black),
+
+                      hintText: 'Recherche',
+                      filled: true,
+                      fillColor: Colors.white,
+                      contentPadding: EdgeInsets.symmetric(horizontal: 20),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(100),
+                        borderSide: BorderSide.none,
                       ),
-
-                      PopupMenuButton<String>(
-                        offset: const Offset(-22, 32),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        color: Colors.white,
-                        elevation: 18,
-                        icon: Icon(
-                          Icons.settings,
-                          size: 25,
-                          color: Colors.white,
-                        ),
-                        itemBuilder: (BuildContext context) => [
-                          PopupMenuItem(
-                            value: "Profile",
-                            child: Container(
-                              width: 150,
-                              decoration: BoxDecoration(
-                                border: Border(
-                                  bottom: BorderSide(
-                                    color: Color(0xFF0EA5E9),
-                                    width: 4,
-                                  ),
-                                ),
-                              ),
-                              padding: EdgeInsets.symmetric(horizontal: 0),
-                              margin: EdgeInsets.symmetric(horizontal: 0),
-                              child: Column(
-                                children: [
-                                  CircleAvatar(
-                                    backgroundColor: Color(0xFF0EA5E9),
-                                    radius: 54,
-                                    child: CircleAvatar(
-                                      radius: 50,
-                                      backgroundImage: AssetImage(
-                                        'assets/images/ilimi_logo.png',
-                                      ),
-                                    ),
-                                  ),
-                                  Text("Ismael Harouna"),
-                                  SizedBox(height: 20),
-                                ],
-                              ),
-                            ),
-                          ),
-
-                          PopupMenuItem(
-                            value: "Profile",
-                            child: Container(
-                              width: 150,
-                              margin: EdgeInsets.symmetric(horizontal: 0),
-                              child: ListTile(
-                                leading: Icon(Icons.person),
-                                title: Text("Modifier le profile"),
-                                onTap: () {
-                                  /* Future.delayed(Duration.zero, () {
-                                      if (context.mounted) {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) =>
-                                                ,
-                                          ),
-                                        );
-                                      }
-                                    });*/
-                                },
-                              ),
-                            ),
-                          ),
-
-                          PopupMenuItem(
-                            value: "Notification",
-                            child: Container(
-                              width: 150,
-                              margin: EdgeInsets.symmetric(horizontal: 0),
-                              child: ListTile(
-                                leading: Icon(Icons.notifications),
-                                title: Text("Notification"),
-                                onTap: () {
-                                  /* Future.delayed(Duration.zero, () {
-                                      if (context.mounted) {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) =>
-                                                ,
-                                          ),
-                                        );
-                                      }
-                                    });*/
-                                },
-                              ),
-                            ),
-                          ),
-
-                          PopupMenuItem(
-                            value: "Langage",
-                            child: Container(
-                              width: 150,
-                              margin: EdgeInsets.symmetric(horizontal: 0),
-                              child: ListTile(
-                                leading: Icon(Icons.language),
-                                title: Text("Langage"),
-                                subtitle: Text(
-                                  "Français",
-                                  style: TextStyle(color: Colors.green),
-                                ),
-                                onTap: () {
-                                  /* Future.delayed(Duration.zero, () {
-                                      if (context.mounted) {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) =>
-                                                ,
-                                          ),
-                                        );
-                                      }
-                                    });*/
-                                },
-                              ),
-                            ),
-                          ),
-
-                          PopupMenuItem(
-                            value: "Terms et conditions",
-                            child: Container(
-                              width: 150,
-                              margin: EdgeInsets.symmetric(horizontal: 0),
-                              child: ListTile(
-                                leading: Icon(Icons.policy),
-                                title: Text("Terms et conditions"),
-                                onTap: () {
-                                  /* Future.delayed(Duration.zero, () {
-                                      if (context.mounted) {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) =>
-                                                ,
-                                          ),
-                                        );
-                                      }
-                                    });*/
-                                },
-                              ),
-                            ),
-                          ),
-
-                          PopupMenuItem(
-                            value: "aide",
-                            child: Container(
-                              width: 150,
-                              margin: EdgeInsets.symmetric(horizontal: 0),
-                              child: ListTile(
-                                leading: Icon(Icons.help),
-                                title: Text("Help"),
-
-                                onTap: () {
-                                  /* Future.delayed(Duration.zero, () {
-                                      if (context.mounted) {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) =>
-                                                ,
-                                          ),
-                                        );
-                                      }
-                                    });*/
-                                },
-                              ),
-                            ),
-                          ),
-
-                          PopupMenuItem(
-                            value: "Deconnexion",
-                            child: Container(
-                              width: 150,
-                              margin: EdgeInsets.symmetric(horizontal: 0),
-                              child: ListTile(
-                                leading: Icon(Icons.logout),
-                                title: Text(
-                                  "Deconnexion",
-                                  style: TextStyle(color: Colors.red),
-                                ),
-                                onTap: () {
-                                  Future.delayed(Duration.zero, () {
-                                    if (context.mounted) {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) => Login(),
-                                        ),
-                                      );
-                                    }
-                                  });
-                                },
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-
-              SizedBox(height: 15),
-
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 20),
-                height: 35,
-                child: TextFormField(
-                  decoration: InputDecoration(
-                    hintText: 'Chercher un module',
-                    prefixIcon: Icon(Icons.search),
-                    filled: true,
-                    fillColor: Colors.white,
-                    contentPadding: EdgeInsets.symmetric(
-                      horizontal: 16,
-                      vertical: 8,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(100),
-                      borderSide: BorderSide.none,
                     ),
                   ),
                 ),
               ),
-              SizedBox(height: 15),
+
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 20),
+                child: IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.notifications,
+                    size: 30,
+                    color: MesCouleurs.bleuPrincipale,
+                  ),
+                ),
+              ),
             ],
           ),
         ),
 
-        Expanded(
-          child: SingleChildScrollView(
-            child: ListView.builder(
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              itemCount: forumPosts.length,
-              itemBuilder: (context, index) {
-                final post = forumPosts[index];
-                final user = users.firstWhere((u) => u.id == post.idUser);
-                return Container(
-                  margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
+        Container(
+          // margin: EdgeInsets.symmetric(vertical: 0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              TextButton(
+                onPressed: () {
+                  setState(() {
+                    colorValeur = colorSelected;
+                    colorValeur2 = colorNoSelected;
+                    _widgetsForumSelected = _widgetsForum[0];
+                  });
+                },
+                child: Text(
+                  "Publications",
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: colorValeur,
+                    decoration: TextDecoration.underline,
+                    decorationThickness: 2,
+                    decorationColor: colorValeur,
+                    height: 2.5,
                   ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        user.name,
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      post.sujet,
-                      post.post,
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          IconButton(
-                            icon: Icon(Icons.thumb_up),
-                            onPressed: () {
-                              setState(() {});
-                            },
-                          ),
-                          Text('0'),
-                          SizedBox(width: 10),
-                          IconButton(
-                            icon: Icon(Icons.comment),
-                            onPressed: () {
-                              // Action pour commenter
-                            },
-                          ),
-                          Text('0'),
-                        ],
-                      ),
-                    ],
+                ),
+              ),
+
+              TextButton(
+                onPressed: () {
+                  setState(() {
+                    colorValeur = colorNoSelected;
+                    colorValeur2 = colorSelected;
+                    _widgetsForumSelected = _widgetsForum[1];
+                  });
+                },
+                child: Text(
+                  "Communauté",
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: colorValeur2,
+                    decoration: TextDecoration.underline,
+                    decorationThickness: 2,
+                    decorationColor: colorValeur2,
+                    height: 2.5,
                   ),
-                );
-              },
-            ),
+                ),
+              ),
+            ],
           ),
         ),
 
-        //Expanded(child: ListWheelScrollView(itemExtent: itemExtent, children: children)),
+        Expanded(child: _widgetsForumSelected),
       ],
     );
   }

@@ -3,6 +3,7 @@ import 'package:ilimi/MyWidget/ajouter_cours_screen.dart';
 import 'package:ilimi/MyWidget/class.dart';
 import 'accueil_formateur.dart';
 import 'forum_formateur.dart';
+import 'forum.dart';
 
 class AccueilFormateur extends StatefulWidget {
   const AccueilFormateur({super.key});
