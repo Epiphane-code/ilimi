@@ -18,7 +18,7 @@ class _ContenuAccueilFormateurState extends State<ContenuAccueilFormateur> {
     return Column(
       children: [
         Container(
-          color: Color(0xFF0EA5E9),
+          color: MesCouleurs.bleuPrincipale,
           child: Column(
             children: [
               Row(
