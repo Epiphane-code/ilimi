@@ -3,48 +3,6 @@ import 'package:ilimi/MyWidget/class.dart';
 import 'forum_post.dart';
 import 'forum_community.dart';
 
-Widget textfild(Color col) {
-  if (col == MesCouleurs.jaunePrincipale) {
-    return Container(
-      //height: 200,
-      margin: EdgeInsets.symmetric(horizontal: 25),
-      /* decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(100),
-              border: Border.all(
-                width: 1,
-                style: BorderStyle.solid,
-                color: MesCouleurs.marronPrincipale,
-              ),
-            ),*/
-      child: TextField(
-        decoration: InputDecoration(
-          prefixIcon: Icon(Icons.message, color: Colors.black),
-          suffixIcon: Icon(Icons.send),
-
-          //labelText: 'Recherche',
-          hintStyle: TextStyle(color: Colors.black),
-
-          hintText: 'Posez votre question ici',
-          filled: true,
-          fillColor: Colors.white,
-          contentPadding: EdgeInsets.symmetric(horizontal: 20),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(100),
-            //borderSide: BorderSide.none,
-          ),
-        ),
-      ),
-    );
-  }
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.spaceAround,
-    children: [
-      IconButton(onPressed: () {}, icon: Icon(Icons.all_inbox)),
-      IconButton(onPressed: () {}, icon: Icon(Icons.favorite)),
-    ],
-  );
-}
-
 class ContenuAccueilFormateur3 extends StatefulWidget {
   const ContenuAccueilFormateur3({super.key});
 
@@ -54,6 +12,76 @@ class ContenuAccueilFormateur3 extends StatefulWidget {
 }
 
 class _ContenuAccueilFormateurState extends State<ContenuAccueilFormateur3> {
+  Color optionTous = MesCouleurs.jaunePrincipale;
+  Color optionFavorite = MesCouleurs.blancPrincipale;
+
+  Widget textfild(Color col) {
+    if (col == MesCouleurs.jaunePrincipale) {
+      return Container(
+        margin: EdgeInsets.symmetric(horizontal: 25),
+
+        child: TextField(
+          decoration: InputDecoration(
+            //prefixIcon: Icon(Icons.message, color: Colors.black),
+            suffixIcon: IconButton(onPressed: () {}, icon: Icon(Icons.send)),
+
+            //labelText: 'Recherche',
+            hintStyle: TextStyle(color: Colors.black),
+
+            hintText: 'Posez votre question ici',
+            filled: true,
+            fillColor: Colors.white,
+            contentPadding: EdgeInsets.symmetric(horizontal: 20),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(100),
+              //borderSide: BorderSide.none,
+            ),
+          ),
+        ),
+      );
+    }
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        Container(
+          width: 100,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(100),
+            color: optionTous,
+          ),
+          child: IconButton(
+            onPressed: () {
+              setState(() {
+                optionTous = MesCouleurs.jaunePrincipale;
+                optionFavorite = MesCouleurs.blancPrincipale;
+                //print("Tous a été selectionné");
+              });
+            },
+            icon: Icon(Icons.all_inbox),
+          ),
+        ),
+        Container(
+          width: 100,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(100),
+            color: optionFavorite,
+          ),
+
+          child: IconButton(
+            onPressed: () {
+              setState(() {
+                optionTous = MesCouleurs.blancPrincipale;
+                optionFavorite = MesCouleurs.jaunePrincipale;
+                //print("Favorite a été selectionné");
+              });
+            },
+            icon: Icon(Icons.favorite),
+          ),
+        ),
+      ],
+    );
+  }
+
   final List<Widget> _widgetsForum = [PostForum(), ForumCommunity()];
   late Widget _widgetsForumSelected;
   Color colorSelected = MesCouleurs.jaunePrincipale;
