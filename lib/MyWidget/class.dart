@@ -21,6 +21,8 @@ class Module {
 }
 
 class MesModules extends Module {
+  int id_module;
+  int id_module_user;
   String nom_module;
   String categorie_module;
   String image_module;
@@ -30,6 +32,8 @@ class MesModules extends Module {
   int niveau;
 
   MesModules({
+    required this.id_module_user,
+    required this.id_module,
     required this.nom_module,
     required this.categorie_module,
     required this.image_module,
@@ -48,7 +52,7 @@ class MesModules extends Module {
 }
 
 class Users {
-  final String? id;
+  final int id;
   final String name;
   final String phone;
   final String birth;
@@ -82,7 +86,7 @@ class Users {
 //////////////////////////// La class Publication Forum /////////////////////////
 // 4.
 class ForumPost {
-  final String id;
+  final int id;
   final int idUser;
   final int nb_reaction;
   final int nb_comment;
@@ -125,11 +129,7 @@ class Community {
   });
 
   toJson() {
-    return {
-      'name': name,
-      'description': description,
-      'imageUrl': imageUrl,
-    };
+    return {'name': name, 'description': description, 'imageUrl': imageUrl};
   }
 }
 

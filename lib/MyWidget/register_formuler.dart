@@ -17,7 +17,7 @@ class _RegisterFormulerState extends State<RegisterFormuler> {
     final controller = Get.put(RegisterController());
     final _formKey = GlobalKey<FormState>();
 
-    return (Container(
+    return Container(
       margin: EdgeInsets.all(27),
       child: Form(
         key: _formKey,
@@ -311,7 +311,7 @@ class _RegisterFormulerState extends State<RegisterFormuler> {
 
             Padding(
               padding: const EdgeInsets.all(5),
-                child: Row(
+              child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
@@ -323,13 +323,13 @@ class _RegisterFormulerState extends State<RegisterFormuler> {
                             selectedRole = value! ? 'apprenant' : null;
                           });
                         },
-                      )),
+                      ),
                       const Text(
                         'Apprenant',
                         style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-              ],
-          ),
+                      ),
+                    ],
+                  ),
                   SizedBox(width: 20),
                   Row(
                     children: [
@@ -340,7 +340,7 @@ class _RegisterFormulerState extends State<RegisterFormuler> {
                             selectedRole = value! ? 'formateur' : null;
                           });
                         },
-                      )),
+                      ),
                       const Text(
                         'Formateur',
                         style: TextStyle(fontWeight: FontWeight.bold),
@@ -352,10 +352,10 @@ class _RegisterFormulerState extends State<RegisterFormuler> {
             ),
 
             const SizedBox(height: 10),
-            
+
             ElevatedButton(
               onPressed: () {
-                if(_formKey.currentState!.validate()) {
+                if (_formKey.currentState!.validate()) {
                   RegisterController.instance.registerUser(
                     controller.email.text.trim(),
                     controller.password.text.trim(),
@@ -364,7 +364,9 @@ class _RegisterFormulerState extends State<RegisterFormuler> {
                     controller.selectedRole.value,
                   );
 
-                  RegisterController.instance.phoneAuthentification(controller.phoneNumber.text.trim()); 
+                  RegisterController.instance.phoneAuthentification(
+                    controller.phoneNumber.text.trim(),
+                  );
                 }
               },
               style: ElevatedButton.styleFrom(
@@ -410,6 +412,6 @@ class _RegisterFormulerState extends State<RegisterFormuler> {
           ],
         ),
       ),
-    ));
+    );
   }
 }
