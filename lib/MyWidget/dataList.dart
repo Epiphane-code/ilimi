@@ -101,7 +101,7 @@ List<MesModules> mesModules = [
   ),
   MesModules(
     id_module: 2,
-    id_module_user: 6,
+    id_module_user: 5,
     nom_module: 'Introduction à Dart',
     categorie_module: 'Langage de Programmation',
     image_module: 'dart.png',
@@ -146,7 +146,7 @@ List<MesModules> mesModules = [
   ),
   MesModules(
     id_module: 6,
-    id_module_user: 6,
+    id_module_user: 1,
     nom_module: 'Bases de données avec SQL',
     categorie_module: 'Bases de données',
     image_module: 'sql.png',

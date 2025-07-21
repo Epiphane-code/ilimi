@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ilimi/MyWidget/lire_module.dart';
 import 'class.dart';
 import 'dataList.dart';
 
@@ -103,25 +104,62 @@ class _CoursBodyState extends State<CoursBody> {
                                 width: 300,
                                 padding: EdgeInsets.all(20),
                                 child: Column(
-                                  mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Text(
                                       module.nom_module,
                                       style: TextStyle(
-                                        color: MesCouleurs.jaunePrincipale,
+                                        color: MesCouleurs.marronPrincipale,
+                                        fontWeight: FontWeight.bold,
                                       ),
                                     ),
-                                    SizedBox(height: 10),
-                                    Text(
-                                      'Ce module a été publié par ${user.name}',
-                                      style: TextStyle(
-                                        color: MesCouleurs.jaunePrincipale,
+
+                                    //SizedBox(height: 10),
+                                    RichText(
+                                      text: TextSpan(
+                                        style: TextStyle(
+                                          fontSize: 15,
+                                          color: Colors.black,
+                                        ),
+                                        children: [
+                                          TextSpan(
+                                            text: 'Ce module a été publié par ',
+                                          ),
+                                          TextSpan(
+                                            text: user.name,
+                                            style: TextStyle(
+                                              color:
+                                                  MesCouleurs.marronPrincipale,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                          TextSpan(
+                                            text:
+                                                ', vous pouvez commencer à suivre dès maintenant',
+                                          ),
+                                        ],
                                       ),
                                     ),
 
                                     ElevatedButton(
-                                      onPressed: () => Navigator.pop(context),
-                                      child: Text("Fermer"),
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => LireModule(
+                                              idModuleC: module.id_module,
+                                            ),
+                                          ),
+                                        );
+                                      },
+                                      child: Text(
+                                        "Commencer",
+                                        style: TextStyle(
+                                          color: MesCouleurs.jaunePrincipale,
+                                        ),
+                                      ),
                                     ),
                                   ],
                                 ),
