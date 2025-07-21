@@ -74,6 +74,9 @@ class _CoursBodyState extends State<CoursBody> {
             itemCount: mesModules.length,
             itemBuilder: (context, index) {
               MesModules module = mesModules[index];
+              Users user = users.firstWhere(
+                (element) => element.id == module.id_module_user,
+              );
               return Card(
                 margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                 child: Container(
@@ -82,59 +85,97 @@ class _CoursBodyState extends State<CoursBody> {
                     borderRadius: BorderRadius.circular(20),
                     color: Colors.white,
                   ),
-                  child: ListTile(
-                    leading: Image.asset(
-                      'assets/images/${module.image_module}',
-                      width: 50,
-                      height: 50,
-                    ),
-                    title: Text(
-                      module.nom_module,
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    subtitle: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          module.categorie_module,
-                          style: TextStyle(color: Colors.grey, fontSize: 14),
-                        ),
-                        Text(
-                          module.duree_module,
-                          style: TextStyle(fontSize: 14),
-                        ),
-                        Text(
-                          module.taille_module,
-                          style: TextStyle(color: Colors.grey, fontSize: 14),
-                        ),
-                        LinearProgressIndicator(
-                          value: module.niveau / 100, // 70%
-                          backgroundColor: Colors.grey[300],
-                          valueColor: AlwaysStoppedAnimation<Color>(
-                            Colors.blue,
-                          ),
-                        ),
-                      ],
-                    ),
-                    trailing: Text(
-                      module.note_module,
-                      style: TextStyle(
-                        color: MesCouleurs.jaunePrincipale,
-                        fontSize: 16,
-                      ),
-                    ),
+                  child: InkWell(
                     onTap: () {
-                      // Action à effectuer lors de l'appui sur le module
-                      /* Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => MyBottonNavigationBar(),
-                        ),
-                      ); */
+                      showGeneralDialog(
+                        context: context,
+                        barrierDismissible:
+                            true, // fermer en cliquant à l'extérieur
+                        barrierLabel: module.nom_module,
+                        transitionDuration: Duration(milliseconds: 300),
+                        pageBuilder: (context, animation, secondaryAnimation) {
+                          return Center(
+                            // Positionnement libre ici
+                            child: Material(
+                              borderRadius: BorderRadius.circular(15),
+                              child: Container(
+                                height: 200,
+                                width: 300,
+                                padding: EdgeInsets.all(20),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Text(
+                                      module.nom_module,
+                                      style: TextStyle(
+                                        color: MesCouleurs.jaunePrincipale,
+                                      ),
+                                    ),
+                                    SizedBox(height: 10),
+                                    Text(
+                                      'Ce module a été publié par ${user.name}',
+                                      style: TextStyle(
+                                        color: MesCouleurs.jaunePrincipale,
+                                      ),
+                                    ),
+
+                                    ElevatedButton(
+                                      onPressed: () => Navigator.pop(context),
+                                      child: Text("Fermer"),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                      );
                     },
+                    child: ListTile(
+                      leading: Image.asset(
+                        'assets/images/${module.image_module}',
+                        width: 50,
+                        height: 50,
+                      ),
+                      title: Text(
+                        module.nom_module,
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      subtitle: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            module.categorie_module,
+                            style: TextStyle(color: Colors.grey, fontSize: 14),
+                          ),
+                          Text(
+                            module.duree_module,
+                            style: TextStyle(fontSize: 14),
+                          ),
+                          Text(
+                            module.taille_module,
+                            style: TextStyle(color: Colors.grey, fontSize: 14),
+                          ),
+                          LinearProgressIndicator(
+                            value: module.niveau / 100, // 70%
+                            backgroundColor: Colors.grey[300],
+                            valueColor: AlwaysStoppedAnimation<Color>(
+                              Colors.blue,
+                            ),
+                          ),
+                        ],
+                      ),
+                      trailing: Text(
+                        module.note_module,
+                        style: TextStyle(
+                          color: MesCouleurs.jaunePrincipale,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               );

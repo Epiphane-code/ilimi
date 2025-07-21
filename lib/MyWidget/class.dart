@@ -4,28 +4,13 @@ import 'package:flutter/material.dart';
 
 /////////////////////// La class Module /////////////////////////////////////
 // 1.
-class Module {
-  String nom_module;
-  String categorie_module;
-  String image_module;
-  String taille_module;
-  String duree_module;
-  String note_module;
-
-  Module({
-    required this.nom_module,
-    required this.categorie_module,
-    required this.image_module,
-    required this.taille_module,
-    required this.duree_module,
-    required this.note_module,
-  });
-}
 
 //////////////////// La class MesModules qui herite Module /////////////////////////////
 // 2.
 
-class MesModules extends Module {
+class MesModules {
+  int id_module;
+  int id_module_user;
   String nom_module;
   String categorie_module;
   String image_module;
@@ -35,6 +20,8 @@ class MesModules extends Module {
   int niveau;
 
   MesModules({
+    required this.id_module,
+    required this.id_module_user,
     required this.nom_module,
     required this.categorie_module,
     required this.image_module,
@@ -42,14 +29,7 @@ class MesModules extends Module {
     required this.duree_module,
     required this.note_module,
     required this.niveau,
-  }) : super(
-         nom_module: nom_module,
-         categorie_module: categorie_module,
-         image_module: image_module,
-         taille_module: taille_module,
-         duree_module: duree_module,
-         note_module: note_module,
-       );
+  });
 }
 
 //////////////////// La class Users ////////////////////////////

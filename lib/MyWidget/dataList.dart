@@ -89,6 +89,8 @@ List<Community> communitie = [
 
 List<MesModules> mesModules = [
   MesModules(
+    id_module: 1,
+    id_module_user: 1,
     nom_module: 'Flutter pour les débutants',
     categorie_module: 'Développement Mobile',
     image_module: 'flutter.png',
@@ -98,6 +100,8 @@ List<MesModules> mesModules = [
     niveau: 6,
   ),
   MesModules(
+    id_module: 2,
+    id_module_user: 6,
     nom_module: 'Introduction à Dart',
     categorie_module: 'Langage de Programmation',
     image_module: 'dart.png',
@@ -108,6 +112,8 @@ List<MesModules> mesModules = [
   ),
   // Ajoutez d'autres modules ici
   MesModules(
+    id_module: 3,
+    id_module_user: 4,
     nom_module: 'React pour les débutants',
     categorie_module: 'Développement Web',
     image_module: 'react.png',
@@ -117,6 +123,8 @@ List<MesModules> mesModules = [
     niveau: 70,
   ),
   MesModules(
+    id_module: 4,
+    id_module_user: 2,
     nom_module: 'Introduction à la programmation',
     categorie_module: 'Informatique',
     image_module: 'programmation.png',
@@ -126,6 +134,8 @@ List<MesModules> mesModules = [
     niveau: 80,
   ),
   MesModules(
+    id_module: 5,
+    id_module_user: 3,
     nom_module: 'Design UI/UX',
     categorie_module: 'Design',
     image_module: 'design.png',
@@ -135,6 +145,8 @@ List<MesModules> mesModules = [
     niveau: 50,
   ),
   MesModules(
+    id_module: 6,
+    id_module_user: 6,
     nom_module: 'Bases de données avec SQL',
     categorie_module: 'Bases de données',
     image_module: 'sql.png',
