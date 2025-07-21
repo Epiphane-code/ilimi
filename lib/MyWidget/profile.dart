@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ilimi/MyWidget/authentification_repo.dart';
 import 'package:ilimi/MyWidget/edit_profile.dart';
 import 'package:ilimi/MyWidget/register_screen.dart';
 import 'package:ilimi/MyWidget/welcome.dart';
@@ -123,14 +124,7 @@ class _ProfileState extends State<Profile> {
                 leading: Icon(Icons.logout),
                 title: Text("Déconnexion", style: TextStyle(color: Colors.red)),
                 onTap: () {
-                  Future.delayed(Duration.zero, () {
-                    if (context.mounted) {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Welcome()),
-                      );
-                    }
-                  });
+                  AuthentificationRepo.instance.logout();
                 },
               ),
             ],

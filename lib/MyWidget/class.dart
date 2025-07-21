@@ -2,15 +2,25 @@
 
 import 'package:flutter/material.dart';
 
-/////////////////////// La class Module /////////////////////////////////////
-// 1.
+class Module {
+  String nom_module;
+  String categorie_module;
+  String image_module;
+  String taille_module;
+  String duree_module;
+  String note_module;
 
-//////////////////// La class MesModules qui herite Module /////////////////////////////
-// 2.
+  Module({
+    required this.nom_module,
+    required this.categorie_module,
+    required this.image_module,
+    required this.taille_module,
+    required this.duree_module,
+    required this.note_module,
+  });
+}
 
-class MesModules {
-  int id_module;
-  int id_module_user;
+class MesModules extends Module {
   String nom_module;
   String categorie_module;
   String image_module;
@@ -29,13 +39,18 @@ class MesModules {
     required this.duree_module,
     required this.note_module,
     required this.niveau,
-  });
+  }) : super(
+         nom_module: nom_module,
+         categorie_module: categorie_module,
+         image_module: image_module,
+         taille_module: taille_module,
+         duree_module: duree_module,
+         note_module: note_module,
+       );
 }
 
-//////////////////// La class Users ////////////////////////////
-// 3.
 class Users {
-  final int id;
+  final String? id;
   final String name;
   final String phone;
   final String birth;
@@ -52,12 +67,24 @@ class Users {
     required this.email,
     required this.imageUrl,
   });
+
+  toJson() {
+    return {
+      'id': id,
+      'name': name,
+      'phone': phone,
+      'birth': birth,
+      'genre': genre,
+      'email': email,
+      'imageUrl': imageUrl,
+    };
+  }
 }
 
 //////////////////////////// La class Publication Forum /////////////////////////
 // 4.
 class ForumPost {
-  final int id;
+  final String id;
   final int idUser;
   final int nb_reaction;
   final int nb_comment;
@@ -72,6 +99,17 @@ class ForumPost {
     required this.sujet,
     required this.post,
   });
+
+  toJson() {
+    return {
+      'id': id,
+      'idUser': idUser,
+      'nb_reaction': nb_reaction,
+      'nb_comment': nb_comment,
+      'sujet': sujet.toString(),
+      'post': post.toString(),
+    };
+  }
 }
 
 ////////////////////////// La class Communauté /////////////////////////////////!SECTION
@@ -87,6 +125,14 @@ class Community {
     required this.description,
     required this.imageUrl,
   });
+
+  toJson() {
+    return {
+      'name': name,
+      'description': description,
+      'imageUrl': imageUrl,
+    };
+  }
 }
 
 ///////////////////// La class Message de notification //////////////////////////////
@@ -105,6 +151,16 @@ class MessageNotification {
     required this.messageNotification,
     required this.heureNotification,
   });
+
+  toJson() {
+    return {
+      'idNotification': idNotification,
+      'idUserDestinationNotification': idUserDestinationNotification,
+      'categorieNotification': categorieNotification,
+      'messageNotification': messageNotification,
+      'heureNotification': heureNotification.toIso8601String(),
+    };
+  }
 }
 
 //////////////////////// La class des couleurs principales ////////////////////////////!SECTION

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "167014119386",
+    "project_id": "ilimi-9f802",
+    "storage_bucket": "ilimi-9f802.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:167014119386:android:9d81c0d918dbc739fb72e3",
+        "android_client_info": {
+          "package_name": "com.example.ilimi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIEgYMLS2yaLpgSvrLlO_8ThsRCZfYHhY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
