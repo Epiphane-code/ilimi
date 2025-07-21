@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ilimi/MyWidget/ajouter_cours_screen.dart';
 import 'package:ilimi/MyWidget/class.dart';
 import 'accueil_formateur.dart';
-import 'forum_formateur.dart';
+//import 'forum_formateur.dart';
 import 'forum_f.dart';
 
 class AccueilFormateur extends StatefulWidget {

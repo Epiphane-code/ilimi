@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'class.dart';
+//import 'class.dart';
 
 class DevFormateur extends StatelessWidget {
   const DevFormateur({super.key});
