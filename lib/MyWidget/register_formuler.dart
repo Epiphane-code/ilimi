@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:ilimi/MyWidget/login_screen.dart';
-import 'package:ilimi/MyWidget/register_controller.dart';
 
 class RegisterFormuler extends StatefulWidget {
   const RegisterFormuler({super.key});
@@ -14,17 +12,20 @@ class _RegisterFormulerState extends State<RegisterFormuler> {
   String? selectedRole; // "apprenant" ou "formateur"
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     final controller = Get.put(RegisterController());
     final _formKey = GlobalKey<FormState>();
 
     return Container(
+=======
+    return (Container(
+>>>>>>> parent of 2ef13ae (Abbas)
       margin: EdgeInsets.all(27),
       child: Form(
-        key: _formKey,
         child: Column(
           children: [
             Text(
-              "Commençon. !",
+              "Commençons !",
               style: TextStyle(
                 fontSize: 24,
                 color: Color(0xFF202244),
@@ -62,54 +63,8 @@ class _RegisterFormulerState extends State<RegisterFormuler> {
                 ],
               ),
               child: TextFormField(
-                controller: controller.email,
                 decoration: InputDecoration(
                   hintText: 'Entrez votre adresse mail',
-                  filled: true,
-                  fillColor: Colors.white,
-                  contentPadding: const EdgeInsets.symmetric(
-                    horizontal: 16,
-                    vertical: 8,
-                  ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide.none,
-                  ),
-                ),
-              ),
-            ),
-
-            const SizedBox(height: 10),
-
-            Center(
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  "Numéro de téléphone",
-                  style: TextStyle(fontWeight: FontWeight.w600),
-                ),
-              ),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(12),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withValues(
-                      alpha: 0.3,
-                    ), // couleur de l’ombre
-                    spreadRadius: 1,
-                    blurRadius: 6,
-                    offset: Offset(0, 4), // position de l’ombre (x, y)
-                  ),
-                ],
-              ),
-              child: TextFormField(
-                keyboardType: TextInputType.phone,
-                controller: controller.phoneNumber,
-                decoration: InputDecoration(
-                  hintText: 'Entrez votre numéro de téléphone',
                   filled: true,
                   fillColor: Colors.white,
                   contentPadding: const EdgeInsets.symmetric(
@@ -152,7 +107,6 @@ class _RegisterFormulerState extends State<RegisterFormuler> {
                           ],
                         ),
                         child: TextFormField(
-                          controller: controller.prenom,
                           decoration: InputDecoration(
                             hintText: 'Entrez votre Prenom',
                             border: OutlineInputBorder(
@@ -197,7 +151,6 @@ class _RegisterFormulerState extends State<RegisterFormuler> {
                           ],
                         ),
                         child: TextFormField(
-                          controller: controller.nom,
                           decoration: InputDecoration(
                             hintText: 'Entrez votre Nom',
                             border: OutlineInputBorder(
@@ -246,7 +199,6 @@ class _RegisterFormulerState extends State<RegisterFormuler> {
                 ],
               ),
               child: TextFormField(
-                controller: controller.password,
                 decoration: InputDecoration(
                   hintText: 'Entrez votre mot de passe',
                   filled: true,
@@ -290,7 +242,6 @@ class _RegisterFormulerState extends State<RegisterFormuler> {
                 ],
               ),
               child: TextFormField(
-                controller: controller.confirmPassword,
                 decoration: InputDecoration(
                   hintText: 'Confirmez votre mot de passe',
                   filled: true,
@@ -321,6 +272,8 @@ class _RegisterFormulerState extends State<RegisterFormuler> {
                         onChanged: (bool? value) {
                           setState(() {
                             selectedRole = value! ? 'apprenant' : null;
+                            print(value);
+                            print(selectedRole);
                           });
                         },
                       ),
@@ -330,7 +283,12 @@ class _RegisterFormulerState extends State<RegisterFormuler> {
                       ),
                     ],
                   ),
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 2ef13ae (Abbas)
                   SizedBox(width: 20),
+
                   Row(
                     children: [
                       Checkbox(
@@ -338,6 +296,8 @@ class _RegisterFormulerState extends State<RegisterFormuler> {
                         onChanged: (bool? value) {
                           setState(() {
                             selectedRole = value! ? 'formateur' : null;
+                            print(value);
+                            print(selectedRole);
                           });
                         },
                       ),
@@ -352,6 +312,7 @@ class _RegisterFormulerState extends State<RegisterFormuler> {
             ),
 
             const SizedBox(height: 10),
+<<<<<<< HEAD
 
             ElevatedButton(
               onPressed: () {
@@ -368,6 +329,15 @@ class _RegisterFormulerState extends State<RegisterFormuler> {
                     controller.phoneNumber.text.trim(),
                   );
                 }
+=======
+            ElevatedButton(
+              onPressed: () {
+                // Action à effectuer lors de l'appui sur le bouton
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Login()),
+                );
+>>>>>>> parent of 2ef13ae (Abbas)
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,

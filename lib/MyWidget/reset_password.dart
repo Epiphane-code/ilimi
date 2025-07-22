@@ -1,7 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
-import 'package:ilimi/MyWidget/opt_screen.dart';
+import 'package:ilimi/MyWidget/opt.dart';
 
 class ResetPassword extends StatefulWidget {
   const ResetPassword({super.key});
@@ -51,11 +51,11 @@ class _ResetPasswordState extends State<ResetPassword> {
                         border: Border.all(color: Colors.amber, width: 1),
                       ),
                       child: TextFormField(
-                        keyboardType: TextInputType.phone,
+                        keyboardType: TextInputType.emailAddress,
 
                         // style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)
                         decoration: InputDecoration(
-                          hintText: "numero de téléphone",
+                          hintText: "Adresse Mail",
                           border: InputBorder.none,
                           contentPadding: EdgeInsets.symmetric(
                             horizontal: 16,

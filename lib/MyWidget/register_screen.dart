@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'welcome.dart';
+//import 'welcome.dart';
 import 'register_formuler.dart';
 
 class Register extends StatelessWidget {

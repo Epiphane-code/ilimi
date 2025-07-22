@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ilimi/MyWidget/authentification_repo.dart';
+import 'package:ilimi/MyWidget/interface_formateur.dart';
+import 'package:ilimi/MyWidget/my_botton_navigation_bar.dart';
 import 'package:ilimi/MyWidget/reset_password.dart';
 import 'register_screen.dart';
 
@@ -11,8 +12,7 @@ class LoginFormuler extends StatefulWidget {
 }
 
 class _LoginFormulerState extends State<LoginFormuler> {
-  final TextEditingController passController = TextEditingController();
-  final TextEditingController emailController = TextEditingController();
+  final TextEditingController PassController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return (Container(
@@ -60,7 +60,6 @@ class _LoginFormulerState extends State<LoginFormuler> {
                 ],
               ),
               child: TextFormField(
-                controller: emailController,
                 decoration: InputDecoration(
                   hintText: 'Entrez votre adresse mail',
                   filled: false,
@@ -104,7 +103,7 @@ class _LoginFormulerState extends State<LoginFormuler> {
                 ],
               ),
               child: TextFormField(
-                controller: passController,
+                controller: PassController,
                 obscureText: true,
                 cursorColor: Colors.blue,
                 decoration: InputDecoration(
@@ -150,7 +149,20 @@ class _LoginFormulerState extends State<LoginFormuler> {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                AuthentificationRepo.instance.loginUserWithEmailAndPassword(emailController.text, passController.text);
+                String name = PassController.text;
+                if (name == '1234') {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => AccueilFormateur()),
+                  );
+                } else {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => MyBottonNavigationBar(),
+                    ),
+                  );
+                }
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
