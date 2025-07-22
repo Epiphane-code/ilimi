@@ -32,8 +32,8 @@ class MesModules extends Module {
   int niveau;
 
   MesModules({
-    required this.id_module_user,
     required this.id_module,
+    required this.id_module_user,
     required this.nom_module,
     required this.categorie_module,
     required this.image_module,
