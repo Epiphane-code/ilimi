@@ -41,46 +41,49 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDN96Sb18FoF7MjSLNZ2tF3yJeIt-7SS7s',
-    appId: '1:167014119386:web:c1496ea0dcd1630afb72e3',
-    messagingSenderId: '167014119386',
-    projectId: 'ilimi-9f802',
-    authDomain: 'ilimi-9f802.firebaseapp.com',
-    storageBucket: 'ilimi-9f802.firebasestorage.app',
+    apiKey: 'AIzaSyDAF8OyjnnbtwkxCRmTqNSqH1mu5UMDxw8',
+    appId: '1:349848231876:web:be906c38dfa3d965b24e91',
+    messagingSenderId: '349848231876',
+    projectId: 'ilimi-hackaton',
+    authDomain: 'ilimi-hackaton.firebaseapp.com',
+    storageBucket: 'ilimi-hackaton.firebasestorage.app',
+    measurementId: 'G-W74H9KLXET',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDIEgYMLS2yaLpgSvrLlO_8ThsRCZfYHhY',
-    appId: '1:167014119386:android:9d81c0d918dbc739fb72e3',
-    messagingSenderId: '167014119386',
-    projectId: 'ilimi-9f802',
-    storageBucket: 'ilimi-9f802.firebasestorage.app',
+    apiKey: 'AIzaSyD0jW_exEfLsJSv97HzcnW6CZTDN4A04kE',
+    appId: '1:349848231876:android:31d7c9d2e68cf5c9b24e91',
+    messagingSenderId: '349848231876',
+    projectId: 'ilimi-hackaton',
+    storageBucket: 'ilimi-hackaton.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyD8jFuruDLWCvBNoxp2BRGmD-fbHc-G1NU',
-    appId: '1:167014119386:ios:b66026c0950958cdfb72e3',
-    messagingSenderId: '167014119386',
-    projectId: 'ilimi-9f802',
-    storageBucket: 'ilimi-9f802.firebasestorage.app',
+    apiKey: 'AIzaSyBbqcKrrpeQmtxNtJCSMJNYDkQbXzlzXoM',
+    appId: '1:349848231876:ios:fbad333349cbc5e3b24e91',
+    messagingSenderId: '349848231876',
+    projectId: 'ilimi-hackaton',
+    storageBucket: 'ilimi-hackaton.firebasestorage.app',
     iosBundleId: 'com.example.ilimi',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyD8jFuruDLWCvBNoxp2BRGmD-fbHc-G1NU',
-    appId: '1:167014119386:ios:b66026c0950958cdfb72e3',
-    messagingSenderId: '167014119386',
-    projectId: 'ilimi-9f802',
-    storageBucket: 'ilimi-9f802.firebasestorage.app',
+    apiKey: 'AIzaSyBbqcKrrpeQmtxNtJCSMJNYDkQbXzlzXoM',
+    appId: '1:349848231876:ios:fbad333349cbc5e3b24e91',
+    messagingSenderId: '349848231876',
+    projectId: 'ilimi-hackaton',
+    storageBucket: 'ilimi-hackaton.firebasestorage.app',
     iosBundleId: 'com.example.ilimi',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyDN96Sb18FoF7MjSLNZ2tF3yJeIt-7SS7s',
-    appId: '1:167014119386:web:14b7762e170d0257fb72e3',
-    messagingSenderId: '167014119386',
-    projectId: 'ilimi-9f802',
-    authDomain: 'ilimi-9f802.firebaseapp.com',
-    storageBucket: 'ilimi-9f802.firebasestorage.app',
+    apiKey: 'AIzaSyDAF8OyjnnbtwkxCRmTqNSqH1mu5UMDxw8',
+    appId: '1:349848231876:web:25f1b14305b3f843b24e91',
+    messagingSenderId: '349848231876',
+    projectId: 'ilimi-hackaton',
+    authDomain: 'ilimi-hackaton.firebaseapp.com',
+    storageBucket: 'ilimi-hackaton.firebasestorage.app',
+    measurementId: 'G-PVRN6M0KKR',
   );
+
 }

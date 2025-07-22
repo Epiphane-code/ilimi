@@ -1,15 +1,14 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:ilimi/MyWidget/authentification_repo.dart';
 import 'package:ilimi/MyWidget/welcome.dart';
-import 'package:ilimi/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart'; // <-- Important
 import 'package:get/get.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
-    .then((value) => Get.put(AuthentificationRepo()));
-  runApp(const MyApp());
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
